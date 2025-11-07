@@ -1,1 +1,1 @@
-# Una página utilizando solo estrictamente html, para hablar un poco de mis gustos, y las cosas que me definen como persona, amen 🎃
+# Colección de páginas realizadas durante el roadmap de desarrollo frontend del entrenamiento de Sebastian, amen 🎃
