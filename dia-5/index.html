@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="es">
+<head> <!-- El lenguaje principal de la página es español, se podría poner con el atributo acá, pero mejor en html -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title lang="es">Mi presentación personal - Justin</title>
+  <style>
+    
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 20px;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+
+    .div-table-container {
+      padding: 1px 3em 3em 1em;
+      background: #92e8f0;
+      background: linear-gradient(0deg, rgba(146, 232, 240, 0.67) 0%, rgba(230, 255, 251, 0.88) 100%);
+      border-radius: 25px;
+    }
+
+    .weekly-planner {
+      font-weight: 600;
+      font-size: 1.2em;
+      color: #2563eb;
+    }
+
+    #main-table {
+      width: 100%;
+      border-collapse: collapse;
+      border-spacing: 0;
+      margin-top: 3em;
+      background-color: #d8f0f5;
+      overflow: auto;
+    }
+
+    #table-title{
+      font-weight: 600;
+      font-size: 1.8em;
+      margin-bottom: 0.5em;
+    }
+
+    .caption-text {
+      font-weight: 700;
+      font-size: 1.5em;
+      margin-bottom: 1.5em;
+    }
+
+
+    .table-body tr:nth-child(odd) {
+      background-color: #e6f7fb;
+    }
+
+    .table-body tr:nth-child(even) {
+      background-color: #b0e0f4;
+    }
+
+    th, td {
+      border: #41dfff 3px solid;
+      padding: 10px;
+    }
+
+    .week-days th {
+      font-weight: 1000;
+      background: #86f3fc;
+    }
+
+    .ol-subtitle {
+      font-weight: 600;
+      text-decoration: underline;
+      margin-bottom: 5px;
+    }
+    
+    
+    .highlight-activity {
+        display: inline-block;
+        background: linear-gradient(90deg, #e6f7ff 0%, #ffffff 100%);
+        padding: 4px 8px;
+        border-radius: 8px;
+        color: #08306b;
+        font-weight: 800;
+        box-shadow: 0 1px 2px rgba(0,0,0,0.06);
+        border: 2px solid rgba(10,132,255,0.15);
+    }
+  </style>
+</head>
+
+<body data-page="presentacion personal">
+  <!-- Dios me ampare con esta tabla -->
+
+  <div class="div-table-container">
+     <table id="main-table">
+        <caption class="caption-text"> <span class="weekly-planner" lang="en">Weekly Planner</span> - Semana del 11 al 15 de Noviembre 2025</caption>
+        
+        <thead >
+            <tr>
+                <th id="table-title" scope="col" colspan="6">Que hptas voy a "hacer" la próxima semana 🥰</th>
+            </tr>
+            <tr class="week-days">
+                <th scope="col">Hora</th>
+                <th scope="col">Lunes</th>
+                <th scope="col">Martes</th>
+                <th scope="col">Miércoles</th>
+                <th scope="col">Jueves</th>
+                <th scope="col">Viernes</th>
+            </tr>
+        </thead>
+        
+        <tbody class="table-body">
+            <tr>
+                <th scope="row">8:00 AM <strong class="highlight-activity">Gimnasio 🏃</strong></th>
+                <td>                  
+                    <ol>
+                        <li class="ol-subtitle">Rutina de pecho</li>
+                        <ul>
+                            <li>Press de banca — 5 x 10–15</li>
+                            <li>Aperturas con mancuernas — 3 x 10–15</li>
+                            <li>Fondos en paralelas — 3 x 8–10</li>
+                        </ul>
+                        <li class="ol-subtitle">Rutina de biceps</li>
+                            <ul>
+                                <li>Curl con barra — 3 x 8–10</li>
+                                <li>Curl martillo — 3 x 8–10</li>
+                                <li>Curl concentrado — 3 x 10–15</li>
+                            </ul>
+                        <li class="ol-subtitle">Rutina de hombros</li>
+                            <ul>
+                                <li>Press militar — 3 x 10–15</li>
+                                <li>Elevaciones laterales — 2 x 10-15</li>
+                    </ol>
+                </td>
+                <td>                    
+                    <ol>
+                        <li class="ol-subtitle">Rutina de espalda</li>
+                        <ul>
+                            <li>Jalón al pecho (agarre ancho) — 4 x 8–10</li>
+                            <li>Remo con barra — 4 x 6–8</li>
+                            <li>Remo sentado / mancuerna a 1 brazo — 3 x 10–12</li>
+                        </ul>
+                        <li class="ol-subtitle">Rutina de tríceps</li>
+                        <ul>
+                            <li>Fondos en paralelas — 3 x 8–12</li>
+                            <li>Extensión tríceps en polea alta — 3 x 10–12</li>
+                            <li>Press francés — 3 x 8–10</li>
+                        </ul>
+                        <li class="ol-subtitle">Rutina de core</li>
+                        <ul>
+                            <li>Plancha frontal — 3 x 45–60s</li>
+                            <li>Elevaciones de piernas — 3 x 12–15</li>
+                            <li>Russian twists — 3 x 20 (10 por lado)</li>
+                        </ul>
+                    </ol>
+                </td>
+                <td>                    
+                    <ol>
+                        <li class="ol-subtitle">Rutina de piernas</li>
+                        <ul>
+                            <li>Sentadilla (barra) — 4 x 6–8</li>
+                            <li>Prensa — 3 x 10–12</li>
+                            <li>Zancadas con mancuerna — 3 x 10 por pierna</li>
+                        </ul>
+                        <li class="ol-subtitle">Rutina de femorales / glúteos</li>
+                        <ul>
+                            <li>Curl femoral — 3 x 10–12</li>
+                            <li>Hip thrust — 4 x 8–12</li>
+                        </ul>
+                        <li class="ol-subtitle">Gemelos y movilidad</li>
+                        <ul>
+                            <li>Elevaciones de talones — 4 x 12–15</li>
+                            <li>Estiramientos 5–7 min</li>
+                        </ul>
+                    </ol>
+                </td>
+                <td>                    
+                    <ol>
+                        <li class="ol-subtitle">Rutina de pecho (variante)</li>
+                        <ul>
+                            <li>Press inclinado con mancuernas — 4 x 8–10</li>
+                            <li>Press agarre cerrado — 3 x 6–8</li>
+                            <li>Aperturas en banco inclinado — 3 x 10–12</li>
+                        </ul>
+                        <li class="ol-subtitle">Rutina de hombros (posterior/estabilidad)</li>
+                        <ul>
+                            <li>Face pulls — 3 x 12–15</li>
+                            <li>Elevaciones frontales — 3 x 10–12</li>
+                            <li>Press Arnold / press militar — 3 x 8–10</li>
+                        </ul>
+                        <li class="ol-subtitle">Movilidad</li>
+                        <ul>
+                            <li>Rotaciones con banda y estiramientos pectoral — 3 x 30s</li>
+                            <li>Band pull-aparts — 3 x 15–20</li>
+                        </ul>
+                    </ol>
+                </td>
+                <td>                    
+                    <ol>
+                        <li class="ol-subtitle">Rutina full-body</li>
+                        <ul>
+                            <li>Sentadilla frontal / goblet — 3 x 8–10</li>
+                            <li>Press militar — 3 x 6–8</li>
+                            <li>Remo — 3 x 8–10</li>
+                        </ul>
+                        <li class="ol-subtitle">Aislamiento de brazos</li>
+                        <ul>
+                            <li>Curl bíceps — 3 x 8–12</li>
+                            <li>Curl martillo — 3 x 10–12</li>
+                            <li>Pushdown tríceps — 3 x 10–12</li>
+                        </ul>
+                        <li class="ol-subtitle">Recuperación activa</li>
+                        <ul>
+                            <li>Cardio suave 10–20 min o movilidad</li>
+                            <li>Foam rolling 5–10 min</li>
+                        </ul>
+                    </ol>
+                </td>
+            </tr>
+            
+            <tr>
+                <th scope="row">10:00 AM <strong class="highlight-activity">Desayuno 🍳</strong></th>
+                <td>                    
+                    <ol>
+                        <li class="ol-subtitle">Avena con frutas </li>
+                            <ul>
+                                <li>60 g de avena</li>
+                                <li>250 ml de leche o bebida vegetal</li>
+                                <li>1/2 plátano en rodajas</li>
+                                <li>30 g de frutos rojos</li>
+                                <li>1 cda de miel (opcional)</li>
+                            </ul>                       
+                        <li class="ol-subtitle">Huevos revueltos con tostadas</li>
+                            <ul>
+                                <li>2 huevos</li>
+                                <li>2 rebanadas de pan integral</li>
+                                <li>1 cda de mantequilla o aceite</li>
+                                <li>Sal y pimienta al gusto</li>
+                            </ul>                        
+                        <li class="ol-subtitle">Yogur con granola y fruta</li>
+                            <ul>
+                                <li>200 g de yogur natural</li>
+                                <li>50 g de granola</li>
+                                <li>Fruta al gusto (manzana, frutos rojos)</li>
+                            </ul>                        
+                    </ol>
+                </td>
+                <td>                    
+                    <ol>
+                        <li class="ol-subtitle">Smoothie bowl</li>
+                            <ul>
+                                <li>150 g de fruta congelada (mango/plátano)</li>
+                                <li>150 ml de leche o yogur</li>
+                                <li>1 cda de mantequilla de cacahuete (opcional)</li>
+                                <li>Toppings: semillas, granola</li>
+                            </ul>                        
+                        <li class="ol-subtitle">Tortilla de claras con espinacas </li>
+                            <ul>
+                                <li>4 claras + 1 huevo entero (opcional)</li>
+                                <li>Puñado de espinacas frescas</li>
+                                <li>1 cdta de aceite de oliva</li>
+                                <li>Sal, pimienta y ajo en polvo</li>
+                            </ul>                       
+                        <li class="ol-subtitle">Tostada de aguacate</li>
+                            <ul>
+                                <li>1 rebanada de pan integral</li>
+                                <li>1/2 aguacate machacado</li>
+                                <li>Limón, sal y chile al gusto</li>
+                            </ul>                        
+                    </ol>
+                </td>
+                <td>                    
+                    <ol>
+                        <li class="ol-subtitle">Panqueques integrales</li>
+                            <ul>
+                                <li>100 g harina integral</li>
+                                <li>1 huevo</li>
+                                <li>150 ml leche o bebida vegetal</li>
+                                <li>1 cda de aceite o mantequilla para cocinar</li>
+                                <li>Toppings: miel, fruta</li>
+                            </ul>                        
+                        <li class="ol-subtitle">Bowl de quinoa y frutas</li>
+                            <ul>
+                                <li>60 g quinoa cocida</li>
+                                <li>Yogur o leche al gusto</li>
+                                <li>Frutas frescas y frutos secos</li>
+                            </ul>                        
+                        <li class="ol-subtitle">Quesadillas de desayuno</li>
+                            <ul>
+                                <li>Tortilla integral</li>
+                                <li>Queso bajo en grasa</li>
+                                <li>Huevo revuelto o jamón</li>
+                            </ul>                        
+                    </ol>
+                </td>
+                <td>                    
+                    <ol>
+                        <li class="ol-subtitle">Batido proteico y fruta</li>
+                            <ul>
+                                <li>1 scoop proteína (opcional)</li>
+                                <li>250 ml leche o agua</li>
+                                <li>1 plátano o 150 g frutos rojos</li>
+                                <li>1 cda de semillas (chia/linaza)</li>
+                            </ul>                        
+                        <li class="ol-subtitle">Avena nocturna (overnight oats)</li>
+                            <ul>
+                                <li>60 g avena</li>
+                                <li>150 ml leche o yogur</li>
+                                <li>1 cda semillas, 1 cda miel</li>
+                                <li>Fruta para acompañar</li>
+                            </ul>                        
+                        <li class="ol-subtitle">Tostadas francesas saludables</li>
+                            <ul>
+                                <li>2 rebanadas pan integral</li>
+                                <li>1 huevo + 50 ml leche</li>
+                                <li>Canela y fruta para servir</li>
+                            </ul>                        
+                    </ol>
+                </td>
+                <td>                    
+                    <ol>
+                        <li class="ol-subtitle">Bagel integral con salmón ahumado</li>
+                            <ul>
+                                <li>1 bagel integral</li>
+                                <li>50–70 g salmón ahumado</li>
+                                <li>Queso crema ligero, eneldo y limón</li>
+                            </ul>                        
+                        <li class="ol-subtitle">Omelette de vegetales</li>
+                            <ul>
+                                <li>2–3 huevos</li>
+                                <li>Verduras (pimiento, champiñones, espinaca)</li>
+                                <li>1 cdta aceite de oliva, sal y pimienta</li>
+                            </ul>                        
+                        <li class="ol-subtitle">Parfait de yogur y frutos secos</li>
+                            <ul>
+                                <li>Yogur natural</li>
+                                <li>Capas de fruta, granola y frutos secos</li>
+                            </ul>
+                    </ol>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">11:00 AM <strong class="highlight-activity">Estudio 💻</strong></th>
+                <td>      
+                    <dl>
+                        <dt class="ol-subtitle">Python</dt>
+                        <dd>Comprensiones de listas, manejo de ficheros y práctica con scripts pequeños.</dd>
+                        <dt class="ol-subtitle">Funciones y módulos</dt>
+                        <dd>Definición de funciones, parámetros, módulos estándar y creación de paquetes.</dd>
+                        <dt class="ol-subtitle">Pruebas unitarias</dt>
+                        <dd>Introducción a unittest/pytest y escritura de tests simples para funciones críticas.</dd>
+                    </dl>
+                </td>
+                <td>                    
+                    <dl>
+                        <dt class="ol-subtitle">Java</dt>
+                        <dd>Programación orientada a objetos: clases, herencia y patrones básicos.</dd>
+                        <dt class="ol-subtitle">Colecciones y genéricos</dt>
+                        <dd>Uso de ArrayList, HashMap y genéricos para colecciones tipadas.</dd>
+                        <dt class="ol-subtitle">Manejo de excepciones</dt>
+                        <dd>Try/catch, declaración throws y buenas prácticas de manejo de errores.</dd>
+                    </dl>
+                </td>
+                <td>                    
+                    <dl>
+                        <dt class="ol-subtitle">CSS</dt>
+                        <dd>Flexbox y Grid: crear layouts responsivos y ejercicios prácticos.</dd>
+                        <dt class="ol-subtitle">Animaciones y transitions</dt>
+                        <dd>Uso de transition, animation y keyframes para microinteracciones.</dd>
+                        <dt class="ol-subtitle">Variables y metodología</dt>
+                        <dd>CSS variables, BEM y organización de estilos para proyectos escalables.</dd>
+                    </dl>
+                </td>
+                <td>                    
+                    <dl>
+                        <dt class="ol-subtitle">HTML</dt>
+                        <dd>Semántica, formularios accesibles y buenas prácticas de marcado.</dd>
+                        <dt class="ol-subtitle">Accesibilidad (ARIA)</dt>
+                        <dd>Roles, atributos aria-* y cómo mejorar la experiencia para lectores de pantalla.</dd>
+                        <dt class="ol-subtitle">Formularios y validación</dt>
+                        <dd>Elementos form, validaciones nativas y mensajes de error amigables.</dd>
+                    </dl>
+                </td>
+                <td>                    
+                    <dl>
+                        <dt class="ol-subtitle">JavaScript</dt>
+                        <dd>Async/Await, fetch y manipulación del DOM con ejercicios prácticos.</dd>
+                        <dt class="ol-subtitle">Eventos y delegación</dt>
+                        <dd>Listeners, propagación y delegación para manejar interacciones eficientemente.</dd>
+                        <dt class="ol-subtitle">Promesas y manejo de errores</dt>
+                        <dd>Promesas, async/await, try/catch y patrones para manejar errores asíncronos.</dd>
+                    </dl>
+                </td>
+            </tr>
+            
+            <tr>
+                <th scope="row">2:00 PM <strong class="highlight-activity">Almuerzo 🍽</strong></th>
+                <td>                    
+                    <ol>
+                        <li class="ol-subtitle">Ensalada de pollo a la parrilla</li>
+                            <ul>
+                                <li>150 g pechuga de pollo</li>
+                                <li>Lechuga, tomate, pepino</li>
+                                <li>Aderezo: aceite de oliva y limón</li>
+                            </ul>                        
+                        <li class="ol-subtitle">Bowl de quinoa y verduras</li>
+                            <ul>
+                                <li>60 g quinoa cocida</li>
+                                <li>Zanahoria, calabacín y pimiento</li>
+                                <li>Salsa de soja ligera o limón</li>
+                            </ul>                        
+                        <li class="ol-subtitle">Sándwich integral de pavo</li>
+                            <ul>
+                                <li>2 rebanadas pan integral</li>
+                                <li>80 g pavo, lechuga y tomate</li>
+                                <li>Mostaza o humus</li>
+                            </ul>                        
+                    </ol>
+                </td>
+                <td>                    
+                    <ol>
+                        <li class="ol-subtitle">Pasta integral con verduras</li>
+                            <ul>
+                                <li>80–100 g pasta integral</li>
+                                <li>Brócoli, champiñones y tomate</li>
+                                <li>Salsa ligera de tomate y parmesano</li>
+                            </ul>                    
+                        <li class="ol-subtitle">Curry de garbanzos</li>
+                            <ul>
+                                <li>200 g garbanzos cocidos</li>
+                                <li>Leche de coco, curry, tomate</li>
+                                <li>Arroz basmati 60–80 g</li>
+                            </ul>                        
+                        <li class="ol-subtitle">Ensalada César con salmón</li>
+                            <ul>
+                                <li>Filete de salmón 100 g</li>
+                                <li>Lechuga romana, croutons</li>
+                                <li>Aderezo César ligero</li>
+                            </ul>                        
+                    </ol>
+                </td>
+                <td>                  
+                    <ol>
+                        <li class="ol-subtitle">Bowl de arroz y ternera</li>
+                            <ul>
+                                <li>80 g arroz integral</li>
+                                <li>100–150 g ternera salteada</li>
+                                <li>Verduras mixtas y salsa teriyaki</li>
+                            </ul>                        
+                        <li class="ol-subtitle">Salteado de tofu y vegetales</li>
+                            <ul>
+                                <li>150 g tofu firme</li>
+                                <li>Brócoli, zanahoria, pimiento</li>
+                                <li>Salsa de soja y jengibre</li>
+                            </ul>                        
+                        <li class="ol-subtitle">Sopa de lentejas</li>
+                            <ul>
+                                <li>150 g lentejas cocidas</li>
+                                <li>Zanahoria, apio, cebolla</li>
+                                <li>Caldo vegetal y especias</li>
+                            </ul>                        
+                    </ol>
+                </td>
+                <td>                    
+                    <ol>
+                        <li class="ol-subtitle">Pescado al horno con verduras</li>
+                            <ul>
+                                <li>150 g filete de pescado (merluza, salmón)</li>
+                                <li>Patata asada, calabacín y espárragos</li>
+                                <li>Hierbas y limón</li>
+                            </ul>                        
+                        <li class="ol-subtitle">Wrap de pollo y hummus</li>
+                            <ul>
+                                <li>Tortilla integral</li>
+                                <li>Pechuga de pollo, hummus, lechuga</li>
+                                <li>Tomate y pepino</li>
+                            </ul>                        
+                        <li class="ol-subtitle">Ensalada griega</li>
+                            <ul>
+                                <li>Tomate, pepino, aceitunas</li>
+                                <li>Queso feta</li>
+                                <li>Aceite de oliva y orégano</li>
+                            </ul>                        
+                    </ol>
+                </td>
+                <td>                    
+                    <ol>
+                        <li class="ol-subtitle">Burrito bowl</li>
+                            <ul>
+                                <li>Base de arroz o lechuga</li>
+                                <li>Frijoles negros, maíz, pico de gallo</li>
+                                <li>Aguacate y salsa</li>
+                            </ul>                        
+                        <li class="ol-subtitle">Pasta con camarones y ajo</li>
+                            <ul>
+                                <li>80–100 g pasta</li>
+                                <li>100 g camarones</li>
+                                <li>Ajo, aceite de oliva y perejil</li>
+                            </ul>                        
+                        <li class="ol-subtitle">Tarta de espinacas y queso</li>
+                            <ul>
+                                <li>Masa integral o base ligera</li>
+                                <li>Espinacas, queso ricotta o feta</li>
+                                <li>Huevos para ligar</li>
+                            </ul>                        
+                    </ol>
+                </td>
+            </tr>
+                   
+                <tr>
+                    <th scope="row">3:00 PM <strong class="highlight-activity">Grupo de estudio HTML 📚</strong></th>
+                    <td>                      
+                        <dl>
+                            <dt class="ol-subtitle">Formularios</dt>
+                            <dd>Tipos de input (email, number, date), asociación de <code>&lt;label&gt;</code> y accesibilidad básica.</dd>
+                            <dt class="ol-subtitle">Semantic Markup</dt>
+                            <dd>Cuándo usar <code>&lt;header&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;article&gt;</code> y por qué ayudan al SEO y a la accesibilidad.</dd>
+                            <dt class="ol-subtitle">Accesibilidad</dt>
+                            <dd>Uso de <code>aria-label</code>, atributos <code>aria-*</code> y buenas prácticas para lectores de pantalla.</dd>
+                        </dl>
+                    </td>
+                    <td>                       
+                        <dl>
+                            <dt class="ol-subtitle">Media</dt>
+                            <dd>Elementos <code>&lt;audio&gt;</code> y <code>&lt;video&gt;</code>, pistas de subtítulos (<code>&lt;track&gt;</code>) y formatos recomendados.</dd>
+                            <dt class="ol-subtitle">Responsive Images</dt>
+                            <dd>Uso de <code>srcset</code>, <code>sizes</code> y el elemento <code>&lt;picture&gt;</code> para servir imágenes adecuadas.</dd>
+                            <dt class="ol-subtitle">Canvas &amp; SVG</dt>
+                            <dd>Cuándo usar SVG vs canvas, ejemplos simples y consideraciones de accesibilidad.</dd>
+                        </dl>
+                    </td>
+                    <td>                       
+                        <dl>
+                            <dt class="ol-subtitle">Form Validation</dt>
+                            <dd>API de validación, atributos como <code>required</code>, <code>pattern</code> y mensajes personalizados.</dd>
+                            <dt class="ol-subtitle">ARIA Roles</dt>
+                            <dd>Roles comunes (<code>role="navigation"</code>, <code>role="banner"</code>) y uso correcto para mejorar la semántica.</dd>
+                            <dt class="ol-subtitle">Microdata y SEO</dt>
+                            <dd>Introducción a JSON-LD y microdata para mejorar snippets en motores de búsqueda.</dd>
+                        </dl>
+                    </td>
+                    <td>                        
+                        <dl>
+                            <dt class="ol-subtitle">HTML5 APIs</dt>
+                            <dd>Breve vista de localStorage, history API y fetch desde HTML/JS integrados.</dd>
+                            <dt class="ol-subtitle">Web Components</dt>
+                            <dd>Conceptos básicos: <code>&lt;template&gt;</code>, shadow DOM y reutilización de componentes.</dd>
+                            <dt class="ol-subtitle">Progressive Enhancement</dt>
+                            <dd>Estrategias para soportar funcionalidades avanzadas manteniendo compatibilidad.</dd>
+                        </dl>
+                    </td>
+                    <td>                       
+                        <dl>
+                            <dt class="ol-subtitle">Performance &amp; Best Practices</dt>
+                            <dd>Buenas prácticas: carga diferida (<code>defer</code>/<code>async</code>), critical CSS y minimizar repaints.</dd>
+                            <dt class="ol-subtitle">Advanced Forms</dt>
+                            <dd>File uploads, multipart forms y consideraciones de seguridad y UX en formularios complejos.</dd>
+                            <dt class="ol-subtitle">Templates &amp; Slots</dt>
+                            <dd>Uso de <code>&lt;template&gt;</code> y slots para estructurar contenido reutilizable en aplicaciones web.</dd>
+                        </dl>
+                    </td>
+                </tr>
+
+            <tr>
+                <th scope="row">8:00 PM <strong class="highlight-activity">Tiempo con mi pareja 🐈</strong></th>
+                <td>                    
+                    <dl>
+                        <dt class="ol-subtitle">Cena temática</dt>
+                        <dd>Preparar juntos una cena de un país que les guste y probar nuevas recetas.</dd>
+                        <dt class="ol-subtitle">Maratón de series</dt>
+                        <dd>Elegir 2-3 episodios de una serie y verla con snacks saludables.</dd>
+                        <dt class="ol-subtitle">Paseo nocturno</dt>
+                        <dd>Caminar por el barrio o un parque cercano para conversar y despejar la mente.</dd>
+                    </dl>
+                </td>
+                <td>                  
+                    <dl>
+                        <dt class="ol-subtitle">Juego de mesa</dt>
+                        <dd>Jugar un juego cooperativo o competitivo que ambos disfruten.</dd>
+                        <dt class="ol-subtitle">Clase juntos</dt>
+                        <dd>Seguir un tutorial corto (baile, cocina, dibujo) y practicar los pasos juntos.</dd>
+                        <dt class="ol-subtitle">Sesión de música</dt>
+                        <dd>Crear una playlist y bailar o simplemente escuchar y comentar canciones.</dd>
+                    </dl>
+                </td>
+                <td>                    
+                    <dl>
+                        <dt class="ol-subtitle">Noche de lectura</dt>
+                        <dd>Leer en voz alta pasajes cortos o compartir artículos interesantes.</dd>
+                        <dt class="ol-subtitle">Cocinar postre</dt>
+                        <dd>Preparar un postre simple juntos (brownies, frutas asadas) y disfrutarlo.</dd>
+                        <dt class="ol-subtitle">Planificación de fin de semana</dt>
+                        <dd>Organizar una salida o actividad para el fin de semana siguiente.</dd>
+                    </dl>
+                </td>
+                <td>                    
+                    <dl>
+                        <dt class="ol-subtitle">Noche de fotografía</dt>
+                        <dd>Hacer mini-sesiones de fotos en casa o en exteriores y editar algunas juntos.</dd>
+                        <dt class="ol-subtitle">Cata casera</dt>
+                        <dd>Probar 3 variedades de té, café o chocolate y comentar notas y preferencias.</dd>
+                        <dt class="ol-subtitle">Spa en casa</dt>
+                        <dd>Masajes, mascarillas faciales y un baño relajante para desconectar.</dd>
+                    </dl>
+                </td>
+                <td>                   
+                    <dl>
+                        <dt class="ol-subtitle">Noche de película</dt>
+                        <dd>Ver una película nueva o un clásico con palomitas y ambiente cómodo.</dd>
+                        <dt class="ol-subtitle">Noche gastronómica</dt>
+                        <dd>Salir a comer o pedir comida de un sitio especial y probar platos distintos.</dd>
+                        <dt class="ol-subtitle">Juegos cooperativos</dt>
+                        <dd>Videojuegos o juegos de mesa cooperativos para pasar un rato entretenido.</dd>
+                    </dl>
+                </td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th scope="row" colspan="6">Este podría ser mi semana en un universo paralelo sin depresión 👍</th>
+            </tr>
+        </tfoot>
+    </table>
+  </div>
+
+    <b id="copy-footer">&copy; 2025 - <mark id="me-merengue-xd">Yo Merengues</mark></b>
+</body>
+</html>
