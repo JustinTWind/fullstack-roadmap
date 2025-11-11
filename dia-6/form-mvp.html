@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario MVP Datos Personales - Justin</title>
+</head>
+
+<body>
+  <main>
+    <h1>Formulario de Datos Personales MVP <span aria-hidden="true">👍</span></h1>
+    
+    <form action="" method="post" target="_blank">
+
+      <p>
+        <label for="name">Nombre: <abbr title="Este campo es obligatorio" aria-label="Campo obligatorio">*</abbr></label>
+        <input 
+          type="text" 
+          pattern="[A-Za-zÀ-ÿ\s]+" 
+          title="Solo se aceptan caracteres alfabéticos" 
+          id="name" 
+          name="name"
+          maxlength="40" 
+          required 
+          aria-required="true"
+          autocomplete="given-name"
+        />
+      </p>
+
+      <p>
+        <label for="last-name">Apellido/s: <abbr title="Este campo es obligatorio" aria-label="Campo obligatorio">*</abbr></label>
+        <input 
+          type="text" 
+          pattern="[A-Za-zÀ-ÿ\s]+" 
+          title="Solo se aceptan caracteres alfabéticos" 
+          id="last-name" 
+          name="last-name"
+          maxlength="40" 
+          required
+          aria-required="true"
+          autocomplete="family-name"
+        />
+      </p>
+
+      <p>
+        <label for="telephone">Número de Teléfono:</label>
+        <input 
+          type="tel" 
+          pattern="[0-9]{7,15}" 
+          title="Solo se permiten caracteres numéricos (7-15 dígitos)" 
+          id="telephone" 
+          name="telephone"
+          autocomplete="tel"
+        /> <!-- Parece que el standar internacional son max 15 numeros lol -->
+      </p> 
+
+      <p>
+        <label for="birthday">Día de cumpleaños:</label>
+        <input 
+          type="date" 
+          title="Solo se permiten fechas válidas" 
+          id="birthday" 
+          name="birthday"
+          max="2025-11-11" 
+          min="1900-01-01"
+          autocomplete="bday"
+        />
+      </p>
+
+      <p>
+        <label for="email">Email: <abbr title="Este campo es obligatorio" aria-label="Campo obligatorio">*</abbr></label>
+        <input 
+          type="email" 
+          id="email" 
+          name="email"
+          required
+          aria-required="true"
+          autocomplete="email"
+        />
+      </p>
+
+      <p>
+        <label for="linkedin-url">LinkedIn URL:</label>
+        <input 
+          type="url" 
+          pattern="https?://(www\.)?linkedin\.com/.*"
+          title="Por favor ingrese una URL válida de LinkedIn (https://www.linkedin.com/in/usuario)" 
+          id="linkedin-url" 
+          name="linkedin-url"
+          placeholder="https://www.linkedin.com/in/usuario"
+          autocomplete="url"
+        />
+      </p>
+
+      <fieldset>
+        <legend>Género:</legend>
+        <p>
+          <input 
+            type="radio" 
+            id="male" 
+            name="gender" 
+            value="male"
+          />
+          <label for="male">Masculino</label>
+        </p>
+        <p>
+          <input 
+            type="radio" 
+            id="female" 
+            name="gender" 
+            value="female"
+          />
+          <label for="female">Femenino</label>
+        </p>
+      </fieldset>
+
+      <p>
+        <button type="submit">Enviar formulario</button>
+        <button type="reset">Limpiar campos</button>
+      </p>
+      
+    </form>
+  </main>
+</body>
+
+</html>
