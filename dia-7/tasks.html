@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasks</title>
+    <style> 
+        del {
+            background-color: #fcbaba;
+        }
+
+        ins {
+            background-color: #ccf2cc;
+        }
+    </style>
+</head>
+<body>
+    <h2>
+        Tasks
+    </h2>
+    <ol id="main-list">
+        <li>wake up</li>
+        
+    </ol>
+    <input type="text" id="task">
+    <button id="add-task-button">Add Task</button>
+    <script>
+        const mainList = document.getElementById('main-list')
+        const listElements = mainList.children
+        const userInput = document.getElementById('task')
+        const addTaskButton = document.getElementById('add-task-button')
+
+        let counter = 0;
+
+        addTaskButton.addEventListener('click' , function() {
+            if (userInput.value !== "") {
+                // Para el anterior elemento
+                let temporalText = listElements[counter].textContent;
+                listElements[counter].innerHTML = `<del>${temporalText}</del>`;
+
+                // Para el nuevo elemento
+                const newListItem = document.createElement('li');
+                newListItem.innerHTML = `<ins>${userInput.value}</ins>`;
+                mainList.appendChild(newListItem);
+                userInput.value="";
+                counter++;
+            } else {
+                alert(`Por favor, escribe una tarea antes de intentar agregarla, perro hpta 🥰`)
+                return;
+            }
+        })
+
+
+    </script>
+</body>
+</html>
