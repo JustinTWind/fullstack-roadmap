@@ -33,7 +33,7 @@
         let counter = 0;
 
         addTaskButton.addEventListener('click' , function() {
-            if (userInput.value !== "") {
+            if (userInput.value.trim() !== "") {
                 // Para el anterior elemento
                 let temporalText = listElements[counter].textContent;
                 listElements[counter].innerHTML = `<del>${temporalText}</del>`;
@@ -49,8 +49,6 @@
                 return;
             }
         })
-
-
     </script>
 </body>
 </html>
