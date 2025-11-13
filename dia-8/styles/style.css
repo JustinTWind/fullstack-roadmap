@@ -1,55 +1,200 @@
-  * {
-    margin: 0;
-    padding: 0;
-    border: 0;
-  }
 
-  .header-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
 
-  .navbar {
-    display: flex;
-    gap: 2rem;
-  }
+figure {
+  margin: 0;
+  padding: 1.5rem;
+}
 
-  .nav-list {
-    display: flex;
-    gap: 2rem;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
+figure[data-figure-draw] {
+  position: absolute;
+  margin-top: 8%;
+  margin-left: 10%;
+}
+figure[data-figure-draw="Squirtle"],
+figure[data-figure-draw="IGOR"] {
+  position: absolute;
+  margin-left: 60%;
+}
 
-  .nav-list a {
-    text-decoration: none;
-    color: #1f2937;
-    font-weight: 500;
-    font-size: 0.95rem;
-    transition: color 0.3s ease;
-    position: relative;
-  }
+.figure-caption {
+  font-size: 0.875rem;
+  color: #6b7280;
+  font-style: italic;
+  margin-top: 1rem;
+  text-align: start;
+}
 
-  .nav-list a:hover {
-    color: #3b82f6;
-  }
+#cats-on-fence {
+  position: static;
+  margin-top: 10px;
+  margin-left: 20px;
+  display: inline-block;
+  border-radius: 50px;
+}
 
-  .nav-list a::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background-color: #3b82f6;
-    transition: width 0.3s ease;
-  }
+pre {
+  background-color: #f3f4f6;
+  padding: 1rem;
+  border-radius: 4px;
+  overflow-x: auto;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
 
-  .nav-list a:hover::after {
-    width: 100%;
-  }
+header {
+  background: linear-gradient(135deg, #f2f2eb 0%, #e8e8e0 100%);
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  border-bottom: 2px solid black;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-container {
+  display: flex;
+  align-content: center;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0;
+  padding: 0 2rem;
+}
+
+.navbar {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-list {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-list a {
+  text-decoration: none;
+  color: #1f2937;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  position: relative;
+  padding: 0.5rem 0;
+}
+
+.nav-list a:hover {
+  color: #3b82f6;
+  transform: translateY(-2px);
+}
+
+.nav-list a::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #3b82f6 0%, #2563eb 100%);
+  transition: width 0.3s ease;
+  border-radius: 2px;
+}
+
+.nav-list a:hover::after {
+  width: 100%;
+}
+
+footer {
+  display: flex;
+  height: 50px;
+  background: linear-gradient(135deg, #f2f2eb 0%, #e8e8e0 100%);
+  align-content: center;
+  justify-content: space-around;
+  align-items: center;
+  border-top: 2px dotted black;
+}
+
+#about {
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom: 5%;
+}
+
+figure pre {
+  display: flex;
+  justify-content: center;
+}
+
+section#interests article:nth-of-type(odd) {
+  background: #000;
+  color: #fff;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+section#interests article:nth-of-type(even) {
+  background: #fff;
+  color: #000;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+section#interests article,
+section#interests article * {
+  color: inherit;
+}
+
+.normal-paragraph {
+  color: inherit;
+}
+
+section#interests article:nth-of-type(odd) > div[data-section] {
+  position: relative;
+  align-content: start;
+  max-width: 40%;
+  margin-left: 5%;
+  margin-top: 10%;
+  margin-bottom: 10%;
+}
+section#interests article:nth-of-type(even) > div[data-section] {
+  position: relative;
+  align-content: start;
+  max-width: 40%;
+  margin-left: 55%;
+  margin-top: 10%;
+  margin-bottom: 10%;
+}
+
+div[data-section="Videojuegos"] .normal-paragraph {
+  margin: 5px;
+}
+
+div[data-section="Ciencia"] .normal-paragraph {
+  margin: 5px;
+}
+
+div[data-section="Música"] .normal-paragraph {
+  margin: 5px;
+}
+
+div[data-section="Programación"] .normal-paragraph {
+  margin: 5px;
+}
+
+h3.passions {
+  margin-left: 30%;
+  margin-bottom: 15%;
+  font-size: 2rem;
+  letter-spacing: 0.1em;
+  font-weight: bold;
+}
