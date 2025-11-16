@@ -1,10 +1,14 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Writings.dev - Copy of Justin</title>
+  <meta name="description"
+    content="Curated collection of high-quality articles about JavaScript, DevOps, Cloud, and more for busy developers.">
+  <meta name="keywords" content="developer articles, programming blog, javascript, devops, cloud computing">
 
   <link rel="stylesheet" href="styles/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -15,29 +19,69 @@
   <link href="https://fonts.googleapis.com/css2?family=Recursive:wght@300..1000&display=swap" rel="stylesheet" />
   <link rel="icon" href="./media/logo.svg" sizes="32x32" type="image/svg" />
 </head>
+
 <body>
-  
-  <header>
 
-  </header>
-  <nav class="main-nav" aria-label="Navegación principal">
-    <a href="#">writings.dev</a>
-    <div>
-      <a href="#">categories</a>
-      <a href="#">articles</a>
-      <a href="#">about</a>
+  <div class="main-container">
+    <header>
+      <nav class="main-nav" aria-label="Main Navegation">
+        <a href="#" aria-label="Writings.dev - Start">writings.dev</a>
+        <ul role="list">
+          <li><a href="#categories">categories</a></li> <!-- NO SE ME PUEDE OLVIDAR AÑADIRLE LOS ID'S HPTA -->
+          <li><a href="#articles">articles</a></li>
+          <li><a href="#about">about</a></li>
+        </ul>
+      </nav>
+      <section class="hero-section" aria-labelledby="hero-title">
+        <img src="./media/logo.svg" alt="" role="hero-logo" aria-hidden="true">
+        <h1 id="hero-title">Writings for Developers</h1>
+        <p>Curated collection of articles for busy developers</p>
+      </section>
+    </header>
+  </div>
+
+  <div class="divider"></div>
+
+  <main>
+    <div class="main-container">
+      <nav class="secondary-navbar" aria-label="Main Navegation">
+        <img src="./media/grid-icon.svg" alt="" />
+        <img src="./media/list-icon.svg" alt="" />
+        <ul class="secondary-navbar-list-items">
+          <li><button class="category-button" type="button">JavaScript</button></li>
+          <li><button class="category-button" type="button">DevOps</button></li>
+          <li><button class="category-button" type="button">Cloud</button></li>
+          <li><button class="category-button" type="button">Terraform</button></li>
+          <li><button class="category-button" type="button">Arquitecture</button></li>
+          <li><button class="category-button" type="button">Scalability</button></li>
+          <li><button class="category-button" type="button">Explainers</button></li>
+        </ul>
+      </nav>
+
+      <div class="article-cards-container">
+
+        <article class="article-card" itemscope itemtype="https://schema.org/Article">
+          <img src="./media/article-one-image.png" alt="A vibrant, geometric tunnel with colorful blocks and arrows creating a 3D futuristic effect" itemprop="image" />
+          <h3 class="article-card-title" itemprop="headline">Build continuous integration pipelines with GitHub Actions</h3>
+          <p class="article-info">
+            GitHub actions provide a really powerful way to integrate continuous
+            integration and delivery into your applications.
+          </p>
+          <footer class="article-card-footer">
+            <time datetime="2022-06-24" itemprop="datePublished">June 24, 2022</time>
+            <span aria-hidden="true">•</span>
+            <span itemprop="articleSection">DevOps</span>
+          </footer>
+        </article>
+        
+      </div>
+
     </div>
-  </nav>
+  </main>
 
-    <h1>
-      Writings for Developers
-    </h1>
-
-  <header>
-  
-
-  
+  <div class="divider"></div>
 
   <script src="app.js"></script>
 </body>
+
 </html>

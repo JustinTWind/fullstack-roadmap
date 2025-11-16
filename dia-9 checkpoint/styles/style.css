@@ -1,46 +1,195 @@
 
 :root {
     --background: #232830;
-    --primary: #FFFFFF;
-    --secondary: #FF7575;
-    --tertiary: #909090;
-    --quaternary: #4D4D4D;
+    --first: #FFFFFF;
+    --second: #FF7575;
+    --third: #909090;
+    --fourth: #4D4D4D;
+}
+
+/* reset de estilos */
+
+input, button { 
+  font: inherit; 
 }
 
 * {
   margin: 0;
   padding: 0;
-  border: 0;
+  box-sizing: border-box; /* Para que el ancho total sea para cada elemento el que especificamos en su propiedad width*/
 }
+
+img, svg {
+  display: block; /* Los hptas image, video y svg son inline*/
+  height: auto;
+  max-width: 100%; /* Para que se ajuste a su contenedor */
+}
+
+/* acá se acaban lol */
+
+/* Estilos generales por defecto */
 
 body {
-  background-color: black;
+  background-color: var(--background);
+  color: var(--first);
+  font-family: 'Poppins', sans-serif;
+  min-height: 100dvh;  /* Para el responsive en móviles */
 }
 
-.main-nav{
-  display: flex;
-  margin: 74px 213px 74px 213px;
-  background-color: white;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 400;
-  font-size: 30px;
+h1, h2 {
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+/*----------------------------------*/
+
+.main-container {
+  width: 73.57%; /* el malparido diseño original está mal centrado */ 
+  max-width: 1680px;
+  margin: 0 auto;
+}
+
+
+nav.main-nav > a {
+  font-size: 1.875rem;
+}
+
+nav.main-nav ul li {
+  font-size: 1.5rem;
 }
 
 nav a {
-  color: black;
+  color: var(--first);
   text-decoration: none;
 }
 
-.main-nav > div {
-  display: flex;
-  align-items: flex-end;
+li {
+  display: inline; /* Para que estén en linea seguiditos*/
+  list-style-type: none;
+  margin: 0 1.125rem;
 }
 
+.main-nav{
+  display: flex; 
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 4.5rem;
+}
+
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-top: 5rem;
+}
+
+.hero-section img {
+  margin-bottom: 2.56rem;
+}
+
+.hero-section p {
+  margin: 1rem;
+  font-size: 1.8125rem;
+}
 
 h1 {
-  color: #FF7575;
-  font-size: 71px;
+  color: var(--second);
+  font-size: 4.5rem; /* Toca recordar que estamos en base 16px */
   font-family: 'Recursive', sans-serif;
   font-style: italic;
   font-weight: 400;
+}
+
+.divider {
+  border: 1px solid var(--fourth);
+  margin-top: 5.1875rem;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+.secondary-navbar {
+  display: flex;
+  justify-content: center;
+  font-family: "Recursive";
+  gap: 2rem;
+  font-style: italic;
+  font-size: 1.6rem;
+}
+
+.navbar-icons {
+  display: inline;
+}
+
+.secondary-navbar img {
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.secondary-navbar img:hover {
+  opacity: 0.5;
+}
+
+.secondary-navbar-list-items {
+  display: flex;
+  
+  mask-image: linear-gradient(
+    to right,
+    black 0%,
+    black calc(100% - 80px),  
+    transparent 100%           
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    black 0%,
+    black calc(100% - 80px),
+    transparent 100%
+  );
+}
+
+.category-button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  outline: none;
+  color: var(--third);
+  transition: color 0.3s ease;
+  user-select: none; /*fina coquetería para que no se seleccione el texto del botón al hacer varias veces click*/
+  -webkit-user-select: none; 
+}
+
+.category-button:hover {
+  color: var(--first);
+}
+
+.category-button.active {
+  color: var(--second);
+  position: relative;
+}
+
+.category-button::before {
+  content: '';
+  position: absolute;
+  top: -8px; 
+  left: 0;
+  right: 0;
+  height: 3px;
+  background-color: var(--second);
+}
+
+.category-button:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 4px;
+}
+
+.article-cards-container {
+  margin-top: 5.87em;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2em;
 }
