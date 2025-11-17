@@ -223,8 +223,12 @@
         </article>
 
 
-        <form class="articles-form" action="" method="post" target="_blank">
+        <form class="articles-form" action="" method="post" target="_blank" enctype="multipart/form-data">
         
+          <p>
+            <label for="form-image">Article Image</label>
+            <input type="file" id="form-image" name="user_article_image" accept="image/*">
+          </p>
 
         </form>
 
@@ -243,6 +247,7 @@
       <img class="twitter-logo" src="media/twitter-logo.svg" alt="Twitter logo" aria-hidden="true">Follow @writingsdev
     </button>
   </footer>
+  
 
   <script src="app.js"></script>
 </body>

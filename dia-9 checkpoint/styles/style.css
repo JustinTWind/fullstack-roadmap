@@ -284,13 +284,15 @@ h1 {
 
 .global-footer {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   margin-top: 2rem;
+  gap: 40.9375rem;
 }
 
 .global-footer {
-  margin: 1.875rem 14.03rem 8.25rem 14.03rem;
+  margin-top: 1.875rem;
+  margin-bottom: 8.25rem;
   font-family: 'Source Sans 3';
   color: var(--first);
 }
