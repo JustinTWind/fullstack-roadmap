@@ -45,6 +45,7 @@
 
   <main>
     <div class="main-container">
+
       <nav id="categories" class="secondary-navbar" aria-label="Categories navigation">
         <img src="./media/grid-icon.svg" alt="Grid view" />
         <img src="./media/list-icon.svg" alt="Grid view" />
@@ -63,13 +64,13 @@
 
         <template id="article-template">
           <article class="article-card" itemscope itemtype="https://schema.org/Article">
-            <img src="" loading="lazy" alt="" itemprop="image" />
+            <img src="" loading="lazy" class="article-card-image" alt="" itemprop="image" />
             <h3 class="article-card-title" itemprop="headline"></h3>
             <p class="article-card-info"></p>
             <footer class="article-card-footer">
-              <time datetime="" itemprop="datePublished"></time>
+              <time datetime="" class="article-date" itemprop="datePublished"></time>
               <span aria-hidden="true">•</span>
-              <span itemprop="articleSection"></span>
+              <span itemprop="articleSection" class="article-area"></span>
             </footer>
           </article>
         </template>
@@ -221,18 +222,74 @@
             <span itemprop="articleSection">DevOps</span>
           </footer>
         </article>
-        
-        <form class="articles-form" action="" method="post" target="_blank" enctype="multipart/form-data">
-        
-          <p>
-            <label for="form-image">Article Image</label>
-            <input type="file" id="form-image" name="user_article_image" accept="image/*">
-          </p>
-
-        </form>
 
       </div>
+
+      <div class="form-container">
+          <form id="article-form" action="#" method="post" target="_blank">
+
+          <h2>Make Your Own Article</h2>
+          <p class="form-global-paragraph">Share your knowledge with the community, create your own article</p>
+
+          <p class="form-group">
+            <label for="user-form-image">Article Image</label>
+            <div class="file-input-wrapper">
+              <input type="file" id="user-form-image" name="user_form_image" accept="image/*">
+              <label for="user-form-image" class="file-input-label">
+                <div class="form-subbmit-image">
+                  <div class="file-icon"><img src="./media/camera.svg" alt="Camera Icon" aria-hidden="true"></div>
+                  <div class="file-text">Click to select your image</div>
+                  <div class="file-subtext">PNG, JPG, GIF untill 5MB</div>
+                </div>
+              </label>
+            </div>
+
+            <div id="previewContainer" class="preview-container">
+              <img id="previewImage" class="preview-image" src="" alt="Preview">
+              <div class="file-name" id="fileName"></div>
+              <button type="button" class="remove-btn" id="removeBtn">
+                  ✕ Delete Image
+              </button>
+            </div>
+
+          </p>
+
+          <p class="form-group">
+            <label for="user-article-title">Article Title</label>
+            <input type="text" id="user-article-title" name="user_article_title" placeholder="Ex: Your first Java desktop app" required  title="Fill with your article title" >
+          </p>
+
+          <p class="form-group">
+            <label for="user-article-description">Description</label>
+            <textarea id="user-article-description" name="user_article_description" placeholder="Write a description for your article..." required title="Fill with your article description"></textarea>
+          </p>
+
+          <p class="form-group">
+            <label for="user-article-date">Release date</label>
+            <input type="date" id="user-article-date" name="user_article_date" required title="Select the article relase date">
+          </p>
+
+          <p class="form-group">
+            <label for="user-form-area">Area</label>
+            <select value="today" id="user-form-area" name="user_form_area" required title="Select only one of the shown elements">
+              <option value="">Select your article area</option>
+              <option value="javascript">Javascript</option>
+              <option value="devops">DevOps</option>
+              <option value="cloud">Cloud</option>
+              <option value="terraform">Terraform</option>
+              <option value="architecture">Architecture</option>
+              <option value="Scalability">Scalability</option>
+              <option value="explainers">Explainers</option>
+              <option value="other">Other</option>
+            </select>
+          </p>
+
+          <button type="submit" class="btn-submit">Subbmit Your Article</button>
+          
+        </form>
+        </div>
     </div>
+
   </main>
 
   <div class="divider"></div>
@@ -246,9 +303,10 @@
       <img class="twitter-logo" src="media/twitter-logo.svg" alt="Twitter logo" aria-hidden="true">Follow @writingsdev
     </button>
   </footer>
-  
 
   <script src="app.js"></script>
+  <script src="form.js"></script>
+  
 </body>
 
 </html>
