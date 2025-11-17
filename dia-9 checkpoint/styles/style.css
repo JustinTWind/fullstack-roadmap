@@ -147,6 +147,10 @@ h1 {
   font-size: 1.6rem;
 }
 
+.secondary-navbar-list-items::-webkit-scrollbar {
+  display: none;
+}
+
 .secondary-navbar img {
   cursor: pointer;
   transition: opacity 0.3s ease;
@@ -238,6 +242,16 @@ h1 {
   max-width: 24.375rem;
   padding: 1.625rem;
   border-radius: 2rem;
+  transition: transform 0.3s ease, 
+              box-shadow 0.3s ease, 
+              scale 0.3s ease;
+}
+
+.article-card:hover {
+  transform: translateY(-8px);
+  scale: 1.05;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15),
+              0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .article-card img {
@@ -278,18 +292,15 @@ h1 {
 .global-footer {
   margin: 1.875rem 14.03rem 8.25rem 14.03rem;
   font-family: 'Source Sans 3';
-  font-weight: 600;
-  font-size: 1.875rem;
-  line-height: 1.125rem;
   color: var(--first);
 }
 
 .global-footer > div span {
   margin-right: 1rem;
+  font-weight: 600;
+  font-size: 1.875rem;
+  line-height: 2.375rem;
 }
-
-/* Rectangle 6 */
-
 
 .footer-author {
   background-color: var(--fifth);
@@ -299,10 +310,44 @@ h1 {
   padding: 6px 13px;
   font-size: 1.1875rem;
   cursor: pointer;
+  transform: color 0.3s ease;
+}
+
+.footer-author:hover {
+  opacity: 50%;
+}
+
+.footer-follow {
+  background-color: var(--fifth);
+  border: none;
+  display: flex;
+  align-items: center;
+  color: var(--first);
+  border-radius: 5px;
+  font-family: 'Source Sans 3';
+  padding: 2px 10px;
+  font-size: 1.1875rem;
+  cursor: pointer;
+  font-weight: 600;
+  padding-left: 11px;
+  padding-right: 8px;
+  height: 2.125rem;
+  transform: color 0.3s ease;
+}
+
+.footer-follow:hover {
+  opacity: 50%;
+}
+
+.twitter-logo {
+  margin-right: 0.625em;
+  display: inline;
+  max-width: 1.2rem;
+  max-height: 1rem;
 }
 
 @media (max-width: 1690px) {
   html {
-    font-size: 14px;
+    font-size: 14px; 
   }
 }

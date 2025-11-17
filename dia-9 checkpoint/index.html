@@ -10,17 +10,13 @@
     content="Curated collection of high-quality articles about JavaScript, DevOps, Cloud, and more for busy developers.">
   <meta name="keywords" content="developer articles, programming blog, javascript, devops, cloud computing">
 
-  <link rel="stylesheet" href="styles/style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Recursive:wght@300..1000&display=swap" rel="stylesheet" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
-  <link rel="icon" href="./media/logo.svg" sizes="32x32" type="image/svg" />
+  
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Recursive:ital,wght@0,300..1000;1,300..1000&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+  
+  <link rel="icon" href="./media/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles/style.css">
 </head>
 
 <body>
@@ -30,13 +26,13 @@
       <nav class="main-nav" aria-label="Main Navegation">
         <a href="#" aria-label="Writings.dev - Start">writings.dev</a>
         <ul role="list">
-          <li><a href="#categories">categories</a></li> <!-- NO SE ME PUEDE OLVIDAR AÑADIRLE LOS ID'S HPTA -->
+          <li><a href="#categories">categories</a></li>
           <li><a href="#articles">articles</a></li>
           <li><a href="#about">about</a></li>
         </ul>
       </nav>
-      <section class="hero-section" aria-labelledby="hero-title">
-        <img src="./media/logo.svg" alt="" role="hero-logo" aria-hidden="true">
+      <section class="hero-section"ria-l aabelledby="hero-title">
+        <img src="./media/logo.svg" alt="Writings.dev logo - Quill pen with inkwell">
         <h1 id="hero-title">Writings for Developers</h1>
         <p>Curated collection of articles for busy developers</p>
       </section>
@@ -47,21 +43,21 @@
 
   <main>
     <div class="main-container">
-      <nav class="secondary-navbar" aria-label="Main Navegation">
-        <img src="./media/grid-icon.svg" alt="A 3×3 grid of small squares" />
-        <img src="./media/list-icon.svg" alt="Three horizontal lines resembling a menu" />
+      <nav id="categories" class="secondary-navbar" aria-label="Categories navigation">
+        <img src="./media/grid-icon.svg" alt="Grid view" />
+        <img src="./media/list-icon.svg" alt="Grid view" />
         <ul class="secondary-navbar-list-items">
           <li><button class="category-button" type="button">JavaScript</button></li>
           <li><button class="category-button" type="button">DevOps</button></li>
           <li><button class="category-button" type="button">Cloud</button></li>
           <li><button class="category-button" type="button">Terraform</button></li>
-          <li><button class="category-button" type="button">Arquitecture</button></li>
+          <li><button class="category-button" type="button">Architecture</button></li>
           <li><button class="category-button" type="button">Scalability</button></li>
           <li><button class="category-button" type="button">Explainers</button></li>
         </ul>
       </nav>
 
-      <div class="article-cards-container">
+      <div id="articles" class="article-cards-container">
 
         <article class="article-card" itemscope itemtype="https://schema.org/Article">
           <img src="./media/article-one-image.png" alt="A vibrant, geometric tunnel with colorful blocks and arrows creating a 3D futuristic effect" itemprop="image" />
@@ -194,11 +190,14 @@
 
   <div class="divider"></div>
 
-  <footer class="global-footer" style="background-color: blue;">
+  <footer id="about" class="global-footer" role="contentinfo">
     <div>
       <span>writings.dev</span>
-      <button class="footer-author">by @kamranahmedse</button>
+      <button type="button" class="footer-author">by @kamranahmedse</button>
     </div>
+    <button type="button" class="footer-follow">
+      <img class="twitter-logo" src="media/twitter-logo.svg" alt="Twitter logo" aria-hidden="true">Follow @writingsdev
+    </button>
   </footer>
 
   <script src="app.js"></script>
