@@ -12,9 +12,11 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Recursive:ital,wght@0,300..1000;1,300..1000&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
-  
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Recursive:ital,wght@0,300..1000;1,300..1000&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap"
+    rel="stylesheet">
+
   <link rel="icon" href="./media/logo.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles/style.css">
 </head>
@@ -31,7 +33,7 @@
           <li><a href="#about">about</a></li>
         </ul>
       </nav>
-      <section class="hero-section"ria-l aabelledby="hero-title">
+      <section class="hero-section" ria-l aabelledby="hero-title">
         <img src="./media/logo.svg" alt="Writings.dev logo - Quill pen with inkwell">
         <h1 id="hero-title">Writings for Developers</h1>
         <p>Curated collection of articles for busy developers</p>
@@ -59,9 +61,25 @@
 
       <div id="articles" class="article-cards-container">
 
+        <template id="article-template">
+          <article class="article-card" itemscope itemtype="https://schema.org/Article">
+            <img src="" loading="lazy" alt="" itemprop="image" />
+            <h3 class="article-card-title" itemprop="headline"></h3>
+            <p class="article-card-info"></p>
+            <footer class="article-card-footer">
+              <time datetime="" itemprop="datePublished"></time>
+              <span aria-hidden="true">•</span>
+              <span itemprop="articleSection"></span>
+            </footer>
+          </article>
+        </template>
+
         <article class="article-card" itemscope itemtype="https://schema.org/Article">
-          <img src="./media/article-one-image.png" alt="A vibrant, geometric tunnel with colorful blocks and arrows creating a 3D futuristic effect" itemprop="image" />
-          <h3 class="article-card-title" itemprop="headline">Build continuous integration pipelines with GitHub Actions</h3>
+          <img src="./media/article-one-image.png" loading="lazy"
+            alt="A vibrant, geometric tunnel with colorful blocks and arrows creating a 3D futuristic effect"
+            itemprop="image" />
+          <h3 class="article-card-title" itemprop="headline">Build continuous integration pipelines with GitHub Actions
+          </h3>
           <p class="article-card-info">
             GitHub actions provide a really powerful way to integrate continuous
             integration and delivery into your applications.
@@ -74,7 +92,8 @@
         </article>
 
         <article class="article-card" itemscope itemtype="https://schema.org/Article">
-          <img src="./media/article-two-image.png" alt="A bright green snake is coiled around a branch against a dark background" itemprop="image" />
+          <img src="./media/article-two-image.png" loading="lazy"
+            alt="A bright green snake is coiled around a branch against a dark background" itemprop="image" />
           <h3 class="article-card-title" itemprop="headline">Python for the Absolute beginners</h3>
           <p class="article-card-info">
             Python is the most popular programming language out
@@ -86,13 +105,14 @@
             <span itemprop="articleSection">DevOps</span>
           </footer>
         </article>
-        
+
         <article class="article-card" itemscope itemtype="https://schema.org/Article">
-          <img src="./media/article-three-image.png" alt="A whale’s tail rises above the ocean surface, splashing water under a bright sky" itemprop="image" />
+          <img src="./media/article-three-image.png" loading="lazy"
+            alt="A whale’s tail rises above the ocean surface, splashing water under a bright sky" itemprop="image" />
           <h3 class="article-card-title" itemprop="headline">Docker from Zero to Hero</h3>
           <p class="article-card-info">
-            Learn what is Docker and  how Docker 
-             is used in the whole software development process.
+            Learn what is Docker and how Docker
+            is used in the whole software development process.
           </p>
           <footer class="article-card-footer">
             <time datetime="2022-06-24" itemprop="datePublished">June 24, 2022</time>
@@ -100,10 +120,13 @@
             <span itemprop="articleSection">DevOps</span>
           </footer>
         </article>
-        
+
         <article class="article-card" itemscope itemtype="https://schema.org/Article">
-          <img src="./media/article-four-image.png" alt="A close-up of metal gears and a chain mechanism in dramatic black-and-white lighting" itemprop="image" />
-          <h3 class="article-card-title" itemprop="headline">Build continuous integration pipelines with GitHub Actions </h3>
+          <img src="./media/article-four-image.png" loading="lazy"
+            alt="A close-up of metal gears and a chain mechanism in dramatic black-and-white lighting"
+            itemprop="image" />
+          <h3 class="article-card-title" itemprop="headline">Build continuous integration pipelines with GitHub Actions
+          </h3>
           <p class="article-card-info">
             GitHub actions provide a really powerful way to integrate continuous
             integration and delivery into your applications.
@@ -114,10 +137,12 @@
             <span itemprop="articleSection">DevOps</span>
           </footer>
         </article>
-        
+
         <article class="article-card" itemscope itemtype="https://schema.org/Article">
-          <img src="./media/article-five-image.png" alt="A wooden plank path crosses a misty, dark stream or river in a forest" itemprop="image" />
-          <h3 class="article-card-title" itemprop="headline">Build continuous integration pipelines with GitHub Actions</h3>
+          <img src="./media/article-five-image.png" loading="lazy"
+            alt="A wooden plank path crosses a misty, dark stream or river in a forest" itemprop="image" />
+          <h3 class="article-card-title" itemprop="headline">Build continuous integration pipelines with GitHub Actions
+          </h3>
           <p class="article-card-info">
             GitHub actions provide a really powerful way to integrate continuous
             integration and delivery into your applications.
@@ -128,10 +153,13 @@
             <span itemprop="articleSection">DevOps</span>
           </footer>
         </article>
-        
+
         <article class="article-card" itemscope itemtype="https://schema.org/Article">
-          <img src="./media/article-six-image.png" alt="A close-up of a rustic, handmade sculpture of a robot or figure, constructed from sheet metal, pipes, and exposed gears, set against a blurred outdoor background" itemprop="image" />
-          <h3 class="article-card-title" itemprop="headline">Build continuous integration pipelines with GitHub Actions</h3>
+          <img src="./media/article-six-image.png" loading="lazy"
+            alt="A close-up of a rustic, handmade sculpture of a robot or figure, constructed from sheet metal, pipes, and exposed gears, set against a blurred outdoor background"
+            itemprop="image" />
+          <h3 class="article-card-title" itemprop="headline">Build continuous integration pipelines with GitHub Actions
+          </h3>
           <p class="article-card-info">
             GitHub actions provide a really powerful way to integrate continuous
             integration and delivery into your applications.
@@ -142,10 +170,13 @@
             <span itemprop="articleSection">DevOps</span>
           </footer>
         </article>
-        
+
         <article class="article-card" itemscope itemtype="https://schema.org/Article">
-          <img src="./media/article-seven-image.png" alt="A solitary island of bare trees is silhouetted against a brilliant orange and red sunset, with the colorful sky reflected on the still water below" itemprop="image" />
-          <h3 class="article-card-title" itemprop="headline">Build continuous integration pipelines with GitHub Actions</h3>
+          <img src="./media/article-seven-image.png" loading="lazy"
+            alt="A solitary island of bare trees is silhouetted against a brilliant orange and red sunset, with the colorful sky reflected on the still water below"
+            itemprop="image" />
+          <h3 class="article-card-title" itemprop="headline">Build continuous integration pipelines with GitHub Actions
+          </h3>
           <p class="article-card-info">
             GitHub actions provide a really powerful way to integrate continuous
             integration and delivery into your applications.
@@ -156,10 +187,13 @@
             <span itemprop="articleSection">DevOps</span>
           </footer>
         </article>
-        
+
         <article class="article-card" itemscope itemtype="https://schema.org/Article">
-          <img src="./media/article-eight-image.png" alt="Close-up of tall grasses and seed heads silhouetted against a large, hazy orange sun setting in a pale purple and pink sky" itemprop="image" />
-          <h3 class="article-card-title" itemprop="headline">Build continuous integration pipelines with GitHub Actions</h3>
+          <img src="./media/article-eight-image.png" loading="lazy"
+            alt="Close-up of tall grasses and seed heads silhouetted against a large, hazy orange sun setting in a pale purple and pink sky"
+            itemprop="image" />
+          <h3 class="article-card-title" itemprop="headline">Build continuous integration pipelines with GitHub Actions
+          </h3>
           <p class="article-card-info">
             GitHub actions provide a really powerful way to integrate continuous
             integration and delivery into your applications.
@@ -170,10 +204,13 @@
             <span itemprop="articleSection">DevOps</span>
           </footer>
         </article>
-        
+
         <article class="article-card" itemscope itemtype="https://schema.org/Article">
-          <img src="./media/article-nine-image.png" alt="A small figure stands facing a wide, rocky, blue-green river flowing through a deep, misty valley surrounded by dense evergreen forests and steep mountainsides" itemprop="image" />
-          <h3 class="article-card-title" itemprop="headline">Build continuous integration pipelines with GitHub Actions</h3>
+          <img src="./media/article-nine-image.png" loading="lazy"
+            alt="A small figure stands facing a wide, rocky, blue-green river flowing through a deep, misty valley surrounded by dense evergreen forests and steep mountainsides"
+            itemprop="image" />
+          <h3 class="article-card-title" itemprop="headline">Build continuous integration pipelines with GitHub Actions
+          </h3>
           <p class="article-card-info">
             GitHub actions provide a really powerful way to integrate continuous
             integration and delivery into your applications.
@@ -184,6 +221,13 @@
             <span itemprop="articleSection">DevOps</span>
           </footer>
         </article>
+
+
+        <form class="articles-form" action="" method="post" target="_blank">
+        
+
+        </form>
+
       </div>
     </div>
   </main>
