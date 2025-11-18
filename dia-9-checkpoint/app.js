@@ -9,7 +9,6 @@ function filterArticles(selectedCategory) {
   const notFoundContainerElement = document.getElementById(
     "not-found-container"
   );
-  const formContainerElement = document.getElementById("form-container");
 
   let visibleCount = 0;
 
@@ -244,7 +243,33 @@ submitButtonElement.addEventListener("click", function () {
 // SCRIPT PARA PODER CREAR NUEVOS ARTÍCULOS -------------------------------
 
 myFormElement.addEventListener("submit", (event) => {
-  event.preventDefault();
+
+  let formIsValid = true;
+
+  if (titleInputElement.value.trim() === "") {
+    titleInputElement.setCustomValidity(
+      "The title cannot contain only white spaces"
+    );
+    formIsValid = false;
+  } else {
+    titleInputElement.setCustomValidity("");
+  }
+
+  if (descriptionInputElement.value.trim() === "") {
+    descriptionInputElement.setCustomValidity(
+      "The description cannot contain only white spaces"
+    );
+    formIsValid = false;
+  } else {
+    descriptionInputElement.setCustomValidity("");
+  }
+
+  myFormElement.reportValidity();
+
+  if (!formIsValid) {
+    event.preventDefault(); 
+  }
+
   try {
     SaveInLocalStorage("articles");
     location.reload();
