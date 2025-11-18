@@ -5,6 +5,7 @@ const articlesContainerElement = document.querySelector("#articles");
 
 function filterArticles(selectedCategory) {
   const filterText = selectedCategory.toLowerCase();
+  const localStorageArticleArea = JSON.parse(localStorage.getItem("article"));
 
   allArticles.forEach(article => {
     const articleAreaElement = article.querySelector('[itemprop="articleSection"]');
@@ -24,6 +25,8 @@ function filterArticles(selectedCategory) {
       article.style.display = 'none';
     }
   });
+
+
 }
 categoryButtonsElements.forEach((button) => {
   button.addEventListener("click", function () {
@@ -122,6 +125,7 @@ const titleInputElement = document.querySelector("#user-article-title");
 const descriptionInputElement = document.querySelector("#user-article-description");
 const dateInputElement = document.getElementById("user-article-date");
 const areaInputElement = document.querySelector("#user-form-area");
+const urlContainerElement = document.getElementById("image-url-container");
 const today = getTodaysDate()
 dateInputElement.value = today;
 
@@ -129,13 +133,8 @@ document.addEventListener("DOMContentLoaded", toggleContainers);
 
 function toggleContainers() {
   const fileRadioElement = document.getElementById("file");
-  const urlContainerElement = document.getElementById("image-url-container");
-  const fileContainerElement = document.getElementById(
-    "image-file-container"
-  );
-
+  const fileContainerElement = document.getElementById("image-file-container");
   const previewContainerElement = document.getElementById("previewContainer");
-  const inputUrlElement = document.getElementById("user-image-url");
 
   if (fileRadioElement.checked) {
     urlContainerElement.style.display = "none";
@@ -175,12 +174,12 @@ inputUrlElement.addEventListener("input", function () {
     }
   };
 
-  previewImageElement.onerror = function () {
-    // Pos lo contrario
-    previewImageElement.src = "";
+  previewImageElement.onerror = function ()  {
     previewContainerElement.classList.remove("active");
     urlErrorMessageElement.textContent = "❌ Error: Invalid URL or broken Link";
     urlErrorMessageElement.style.display = "block";
+    previewImageElement.onload = null;
+    previewImageElement.onerror = null;
   };
 
   if (url) {
@@ -207,7 +206,6 @@ const submitButtonElement = document.querySelector('.btn-submit') /* NO USAR GET
 const userInputsElements = myFormElement.querySelectorAll('input, select, textarea')
 
 submitButtonElement.addEventListener('click', function () {
-  console.log("tin")
   userInputsElements.forEach(node => {
     node.classList.add('submitted')
   })
@@ -231,9 +229,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
 async function SaveInLocalStorage(key) {
   let imageUrl = null;
-  if (imageInputElement.files && imageInputElement.files[0]) {
+  const urlContainerElementDisplayValue = urlContainerElement.style.display;
+
+  if (imageInputElement.files && imageInputElement.files[0] && urlContainerElementDisplayValue === "none" ) {
     imageUrl = await ConvertImageToURL(imageInputElement.files[0]);
-  }
+  } else imageUrl = inputUrlElement.value.trim();
 
   const data = {
     title: titleInputElement.value,
