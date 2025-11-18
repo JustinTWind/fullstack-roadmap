@@ -64,7 +64,6 @@ function getTodaysDate() {
   return `${year}-${month}-${day}`;
 }
 
-
 const submitButtonElement = document.querySelector('.btn-submit') /* NO USAR GET CON LA CLASS NAME VIDA TREINTAHIJUEPUTAMENTE MALPARIDA */
 const userInputsElements = myFormElement.querySelectorAll('input, select, textarea')
 
