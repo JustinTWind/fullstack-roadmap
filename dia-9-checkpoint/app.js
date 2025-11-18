@@ -242,7 +242,8 @@ submitButtonElement.addEventListener("click", function () {
 
 // SCRIPT PARA PODER CREAR NUEVOS ARTÍCULOS -------------------------------
 
-myFormElement.addEventListener("submit", (event) => {
+myFormElement.addEventListener("submit", async (event) => {
+  event.preventDefault();
 
   let formIsValid = true;
 
@@ -266,15 +267,14 @@ myFormElement.addEventListener("submit", (event) => {
 
   myFormElement.reportValidity();
 
-  if (!formIsValid) {
-    event.preventDefault(); 
-  }
-
-  try {
-    SaveInLocalStorage("articles");
-    location.reload();
-  } catch (error) {
-    alert("❌ Error - Article Not Subbmited");
+  if (formIsValid) {
+    try {
+      await SaveInLocalStorage("articles");
+      location.reload();
+    } catch (error) {
+      console.error("Error submitting article:", error);
+      alert("❌ Error - Article Not Subbmited");
+    }
   }
 });
 
