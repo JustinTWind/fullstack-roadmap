@@ -5,11 +5,20 @@ const articlesContainerElement = document.querySelector("#articles");
 
 function filterArticles(selectedCategory) {
   const filterText = selectedCategory.toLowerCase();
-  const localStorageArticleArea = JSON.parse(localStorage.getItem("article"));
 
-  allArticles.forEach(article => {
-    const articleAreaElement = article.querySelector('[itemprop="articleSection"]');
-    const articleArea = articleAreaElement ? articleAreaElement.textContent.trim().toLowerCase() : '';
+  const currentArticles = document.querySelectorAll(
+    ".article-cards-container .article-card"
+  );
+  
+  currentArticles.forEach(article => {
+    
+    const articleAreaElement = article.querySelector(
+      '[itemprop="articleSection"]'
+    );
+
+    const articleArea = articleAreaElement
+      ? articleAreaElement.textContent.trim().toLowerCase()
+      : "";
 
     let shouldBeVisible;
 
@@ -24,8 +33,8 @@ function filterArticles(selectedCategory) {
     } else {
       article.style.display = 'none';
     }
-  });
 
+  });
 
 }
 categoryButtonsElements.forEach((button) => {
