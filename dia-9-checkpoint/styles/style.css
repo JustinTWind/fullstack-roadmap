@@ -250,101 +250,139 @@ h1 {
   outline-offset: 4px;
 }
 
+/*--------------------
+    Botón Robado 
+  --------------------*/
+
 .category-dropdown {
-    display: none;
-    width: 100%;
+  display: none;
+  width: 100%;
 }
 
 .category-dropdown-btn {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    max-width: 20rem;
-    margin: 0 auto;
-    padding: 0.875rem 1.5rem;
-    background: linear-gradient(135deg, rgba(255, 117, 117, 0.15) 0%, rgba(255, 117, 117, 0.05) 100%);
-    border: 0.125rem solid rgba(255, 117, 117, 0.3);
-    border-radius: 0.75rem;
-    color: var(--first);
-    font-family: 'Recursive', sans-serif;
-    font-style: italic;
-    font-size: 1.25rem;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 20rem;
+  margin: 0 auto;
+  padding: 0.875rem 1.5rem;
+  background: var(--first);
+  border: 0.3rem solid var(--second);
+  border-radius: 0.75rem;
+  color: var(--text);
+  font-family: 'Recursive', sans-serif;
+  font-style: italic;
+  font-size: 1.25rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .category-dropdown-btn:hover {
-  background: linear-gradient(135deg, rgba(255, 117, 117, 0.25) 0%, rgba(255, 117, 117, 0.1) 100%);
+  background: var(--background);
+  color: var(--first);
   border-color: var(--second);
 }
 
 .category-dropdown-btn svg {
-    transition: transform 0.3s ease;
+  transition: transform 0.3s ease;
 }
 
 .category-dropdown-btn[aria-expanded="true"] svg {
-    transform: rotate(180deg);
+  transform: rotate(180deg);
 }
 
 .category-dropdown-menu {
-    display: none;
-    list-style: none;
-    margin-top: 1rem;
-    padding: 0;
-    max-width: 20rem;
-    margin-left: auto;
-    margin-right: auto;
-    background: rgba(35, 40, 48, 0.95);
-    border: 0.125rem solid rgba(255, 117, 117, 0.2);
-    border-radius: 0.75rem;
-    overflow: hidden;
-    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.3);
+  display: none;
+  list-style: none;
+  margin-top: 1rem;
+  padding: 0;
+  font-weight: 600;
+  max-width: 20rem;
+  margin-left: auto;
+  margin-right: auto;
+  background: var(--first);
+  border: 0.2rem solid var(--second);
+  border-radius: 0.75rem;
+  overflow: hidden;
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.3);
 }
 
 .category-dropdown-menu.active {
-    display: block;
-    animation: slideDown 0.3s ease;
+  display: block;
+  animation: slideDown 0.3s ease;
 }
 
 @keyframes slideDown {
-    from {
-        opacity: 0;
-        transform: translateY(-0.625rem);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  from {
+    opacity: 0;
+    transform: translateY(-0.625rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .category-dropdown-menu li {
-    border-bottom: 0.0625rem solid rgba(255, 117, 117, 0.1);
+  position: relative;
+  margin-left: 0;
 }
 
-.category-dropdown-menu li:last-child {
-    border-bottom: none;
-}
 
 .category-dropdown-menu li button {
-    width: 100%;
-    padding: 1rem 1.5rem;
-    background: transparent;
-    border: none;
-    color: #909090;
-    font-family: 'Recursive', sans-serif;
-    font-style: italic;
-    font-size: 1.125rem;
-    text-align: left;
-    cursor: pointer;
-    transition: all 0.3s ease;
+  width: 100%;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 1.5rem;
+  text-align: left;
+  background: transparent;
+  border: none;
+  color: #515151;
+  font-family: 'Recursive', sans-serif;
+  font-style: italic;
+  font-size: 1.125rem;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .category-dropdown-menu li button:hover {
-    background: rgba(139, 122, 122, 0.1);
-    color: var(--first);
-    padding-left: 2rem;
+  background: var(--background);
+  color: var(--first);
+  color: var(--first);
+  padding-left: 2rem;
+}
+
+/*--------------------
+    Mensaje de Error 
+  --------------------*/
+
+#not-found-container {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 7rem;
+}
+
+#not-found-container img {
+  margin-bottom: 3rem;
+  height: 14rem;
+  width: 14rem;
+}
+
+#not-found-container h2 {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+
+#not-found-container p {
+  margin-top: 1rem;
+  font-size: 1.3rem;
 }
 
 /*--------------------
@@ -432,7 +470,7 @@ h1 {
 .article-card-title::-webkit-scrollbar-thumb,
 .article-card-info::-webkit-scrollbar-thumb,
 #user-article-description::-webkit-scrollbar-thumb {
-  background-color:#555;
+  background-color: #555;
   border-radius: 6px;
   border: 3px solid #f0f0f0;
 }
@@ -520,7 +558,7 @@ h1 {
   ---------------------*/
 
 .form-container {
-  margin: 10rem auto;
+  margin: 7rem auto;
   font-family: 'poppins';
   background: var(--first);
   border-radius: 20px;
@@ -590,8 +628,8 @@ textarea {
   min-height: 8.5rem;
 }
 
-.submitted:invalid  {
-  border-color: var(--second); 
+.submitted:invalid {
+  border-color: var(--second);
 }
 
 .file-input-wrapper {
@@ -681,66 +719,68 @@ textarea {
 .form-radio-container {
   display: flex;
   justify-content: center;
-  align-items: center; 
+  align-items: center;
   margin: 2rem;
   gap: 3rem;
 }
 
 .form-radio-container input[type="radio"] {
-    display: none;
+  display: none;
 }
 
 .radio-label {
-    cursor: pointer; 
-    font-size: 1.1em;
-    color: var(--text);
-    position: relative;
-    padding-left: 28px;
-    transition: color 0.2s ease;
+  cursor: pointer;
+  font-size: 1.1em;
+  color: var(--text);
+  position: relative;
+  padding-left: 28px;
+  transition: color 0.2s ease;
 }
 
 .radio-label::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 0;
-    transform: translateY(-50%);
-    width: 18px; 
-    height: 18px;
-    border-radius: 50%;
-    border: 2px solid #ccc; 
-    background: #fff;
-    transition: all 0.2s ease;
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+  background: #fff;
+  transition: all 0.2s ease;
 }
 
 .radio-label::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 5.5px; 
-    transform: translateY(-50%) scale(0); 
-    width: 10px; 
-    height: 10px; 
-    border-radius: 50%;
-    background-color: #007bff;
-    transition: transform 0.2s ease;
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 5.5px;
+  transform: translateY(-50%) scale(0);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #007bff;
+  transition: transform 0.2s ease;
 }
 
-.form-radio-container input[type="radio"]:checked + .radio-label {
-    color: #007bff;
-    font-weight: 600;
+.form-radio-container input[type="radio"]:checked+.radio-label {
+  color: #007bff;
+  font-weight: 600;
 }
 
-.form-radio-container input[type="radio"]:checked + .radio-label::before {
-    border-color: #007bff; /* Borde azul */
+.form-radio-container input[type="radio"]:checked+.radio-label::before {
+  border-color: #007bff;
+  /* Borde azul */
 }
 
-.form-radio-container input[type="radio"]:checked + .radio-label::after {
-    transform: translateY(-50%) scale(1); /* Muestra el punto */
+.form-radio-container input[type="radio"]:checked+.radio-label::after {
+  transform: translateY(-50%) scale(1);
+  /* Muestra el punto */
 }
 
-.form-radio-container input[type="radio"]:hover + .radio-label::before {
-    border-color: #0056b3;
+.form-radio-container input[type="radio"]:hover+.radio-label::before {
+  border-color: #0056b3;
 }
 
 .file-name {
@@ -816,6 +856,7 @@ select {
   .global-footer button {
     height: auto;
   }
+
 }
 
 @media (max-width: 980px) {
@@ -858,20 +899,20 @@ select {
 
   .category-dropdown {
     margin-top: 2rem;
-      display: block;
-    }
+    display: block;
+  }
 
   #categories {
     display: none;
   }
 
   .category-dropdown-btn {
-      font-size: 1.125rem;
-    }
+    font-size: 1.125rem;
+  }
 
-    .category-dropdown-menu li button {
-        font-size: 1rem;
-    }
+  .category-dropdown-menu li button {
+    font-size: 1rem;
+  }
 }
 
 

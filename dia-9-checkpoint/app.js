@@ -1,17 +1,28 @@
 const categoryButtonsElements = document.querySelectorAll(".category-button");
-const allArticles = document.querySelectorAll(".article-cards-container .article-card");
+const allArticles = document.querySelectorAll(
+  ".article-cards-container .article-card"
+);
 const articlesContainerElement = document.querySelector("#articles");
-
 
 function filterArticles(selectedCategory) {
   const filterText = selectedCategory.toLowerCase();
+  const notFoundContainerElement = document.getElementById(
+    "not-found-container"
+  );
+  const formContainerElement = document.getElementById("form-container");
+
+  let visibleCount = 0;
 
   const currentArticles = document.querySelectorAll(
     ".article-cards-container .article-card"
   );
-  
-  currentArticles.forEach(article => {
-    
+
+  if (currentArticles.length === 0) {
+    alert("No hay artículos en el DOM para filtrar.");
+    return;
+  }
+
+  currentArticles.forEach((article) => {
     const articleAreaElement = article.querySelector(
       '[itemprop="articleSection"]'
     );
@@ -22,21 +33,25 @@ function filterArticles(selectedCategory) {
 
     let shouldBeVisible;
 
-    if (filterText === 'all' || filterText === '') {
+    if (filterText === "all" || filterText === "") {
       shouldBeVisible = true;
     } else {
       shouldBeVisible = articleArea === filterText;
     }
 
     if (shouldBeVisible) {
-      article.style.display = 'flex';
+      article.style.display = "flex";
+      visibleCount++;
     } else {
-      article.style.display = 'none';
+      article.style.display = "none";
     }
 
+    if (visibleCount == 0) {
+      notFoundContainerElement.style.display = "flex";
+    } else notFoundContainerElement.style.display = "none";
   });
-
 }
+
 categoryButtonsElements.forEach((button) => {
   button.addEventListener("click", function () {
     const category = this.textContent.trim();
@@ -61,7 +76,7 @@ const categoryDropdownMenu = document.querySelector(".category-dropdown-menu");
 
 if (categoryDropdownBtn && categoryDropdownMenu) {
   categoryDropdownBtn.addEventListener("click", (e) => {
-    e.stopPropagation();
+    e.stopPropfagation();
     const isExpanded =
       categoryDropdownBtn.getAttribute("aria-expanded") === "true";
     categoryDropdownBtn.setAttribute("aria-expanded", !isExpanded);
@@ -89,16 +104,16 @@ if (categoryDropdownBtn && categoryDropdownMenu) {
   });
 }
 
-const myFormElement = document.getElementById('article-form')
+const myFormElement = document.getElementById("article-form");
 
-const imageInputElement = document.getElementById('user-form-image');
-const previewContainerElement = document.getElementById('previewContainer');
-const previewImageElement = document.getElementById('previewImage');
-const fileNameElement = document.getElementById('fileName');
+const imageInputElement = document.getElementById("user-form-image");
+const previewContainerElement = document.getElementById("previewContainer");
+const previewImageElement = document.getElementById("previewImage");
+const fileNameElement = document.getElementById("fileName");
 const urlErrorMessageElement = document.getElementById("urlErrorMessage");
-const removeBtnElement = document.getElementById('removeBtn');
+const removeBtnElement = document.getElementById("removeBtn");
 
-imageInputElement.addEventListener('change', function (e) {
+imageInputElement.addEventListener("change", function (e) {
   const file = e.target.files[0];
 
   if (file) {
@@ -119,7 +134,6 @@ imageInputElement.addEventListener('change', function (e) {
   }
 });
 
-
 removeBtnElement.addEventListener("click", function () {
   imageInputElement.value = "";
   previewImageElement.src = "";
@@ -131,11 +145,13 @@ removeBtnElement.addEventListener("click", function () {
 
 const inputUrlElement = document.getElementById("user-image-url");
 const titleInputElement = document.querySelector("#user-article-title");
-const descriptionInputElement = document.querySelector("#user-article-description");
+const descriptionInputElement = document.querySelector(
+  "#user-article-description"
+);
 const dateInputElement = document.getElementById("user-article-date");
 const areaInputElement = document.querySelector("#user-form-area");
 const urlContainerElement = document.getElementById("image-url-container");
-const today = getTodaysDate()
+const today = getTodaysDate();
 dateInputElement.value = today;
 
 document.addEventListener("DOMContentLoaded", toggleContainers);
@@ -183,7 +199,7 @@ inputUrlElement.addEventListener("input", function () {
     }
   };
 
-  previewImageElement.onerror = function ()  {
+  previewImageElement.onerror = function () {
     previewContainerElement.classList.remove("active");
     urlErrorMessageElement.textContent = "❌ Error: Invalid URL or broken Link";
     urlErrorMessageElement.style.display = "block";
@@ -211,14 +227,19 @@ function getTodaysDate() {
   return `${year}-${month}-${day}`;
 }
 
-const submitButtonElement = document.querySelector('.btn-submit') /* NO USAR GET CON LA CLASS NAME VIDA TREINTAHIJUEPUTAMENTE MALPARIDA */
-const userInputsElements = myFormElement.querySelectorAll('input, select, textarea')
+const submitButtonElement =
+  document.querySelector(
+    ".btn-submit"
+  ); /* NO USAR GET CON LA CLASS NAME VIDA TREINTAHIJUEPUTAMENTE MALPARIDA */
+const userInputsElements = myFormElement.querySelectorAll(
+  "input, select, textarea"
+);
 
-submitButtonElement.addEventListener('click', function () {
-  userInputsElements.forEach(node => {
-    node.classList.add('submitted')
-  })
-})
+submitButtonElement.addEventListener("click", function () {
+  userInputsElements.forEach((node) => {
+    node.classList.add("submitted");
+  });
+});
 
 // SCRIPT PARA PODER CREAR NUEVOS ARTÍCULOS -------------------------------
 
@@ -228,7 +249,7 @@ myFormElement.addEventListener("submit", (event) => {
     SaveInLocalStorage("articles");
     location.reload();
   } catch (error) {
-    alert('❌ Error - Article Not Subbmited');
+    alert("❌ Error - Article Not Subbmited");
   }
 });
 
@@ -240,7 +261,11 @@ async function SaveInLocalStorage(key) {
   let imageUrl = null;
   const urlContainerElementDisplayValue = urlContainerElement.style.display;
 
-  if (imageInputElement.files && imageInputElement.files[0] && urlContainerElementDisplayValue === "none" ) {
+  if (
+    imageInputElement.files &&
+    imageInputElement.files[0] &&
+    urlContainerElementDisplayValue === "none"
+  ) {
     imageUrl = await ConvertImageToURL(imageInputElement.files[0]);
   } else imageUrl = inputUrlElement.value.trim();
 
@@ -267,7 +292,6 @@ function LocalStorageHasItem(item) {
 }
 
 function ConvertImageToURL(file) {
-
   if (!file) {
     return Promise.resolve(null);
   }
