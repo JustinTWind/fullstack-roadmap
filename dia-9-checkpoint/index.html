@@ -14,7 +14,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Recursive:ital,wght@0,300..1000;1,300..1000&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Recursive:slnt,wght,CASL@-15..0,300..1000,0&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap"
     rel="stylesheet">
 
   <link rel="icon" href="./media/logo.svg" type="image/svg+xml">
@@ -60,6 +60,24 @@
         </ul>
       </nav>
 
+      <div class="category-dropdown">
+        <button class="category-dropdown-btn" aria-expanded="false">
+          <span>Filter by Category</span>
+          <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 1L6 6L11 1" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+          </svg>
+        </button>
+        <ul class="category-dropdown-menu">
+          <li><button class="category-button" type="button">JavaScript</button></li>
+          <li><button class="category-button" type="button">DevOps</button></li>
+          <li><button class="category-button" type="button">Cloud</button></li>
+          <li><button class="category-button" type="button">Terraform</button></li>
+          <li><button class="category-button" type="button">Architecture</button></li>
+          <li><button class="category-button" type="button">Scalability</button></li>
+          <li><button class="category-button" type="button">Explainers</button></li>
+        </ul>
+      </div>
+
       <div id="articles" class="article-cards-container">
 
         <template id="article-template">
@@ -96,7 +114,7 @@
           <img src="./media/article-two-image.png" loading="lazy"
             alt="A bright green snake is coiled around a branch against a dark background" itemprop="image" />
           <h3 class="article-card-title" itemprop="headline">Python for the Absolute beginners</h3>
-          <p class="article-card-info">
+          <p class="article-card-info" style="overflow-y: unset; padding-right: 1rem;">
             Python is the most popular programming language out
             there and it is used for so many different industries.
           </p>
@@ -112,8 +130,8 @@
             alt="A whale’s tail rises above the ocean surface, splashing water under a bright sky" itemprop="image" />
           <h3 class="article-card-title" itemprop="headline">Docker from Zero to Hero</h3>
           <p class="article-card-info">
-            Learn what is Docker and how Docker
-            is used in the whole software development process.
+            Learn what is Docker and how Docker is
+            used in the whole software development process.
           </p>
           <footer class="article-card-footer">
             <time datetime="2022-06-24" itemprop="datePublished">June 24, 2022</time>
@@ -226,52 +244,73 @@
       </div>
 
       <div class="form-container">
-          <form id="article-form" action="#" method="post" target="_self">
+        <form id="article-form" action="#" method="post" target="_self">
 
           <h2>Make Your Own Article</h2>
           <p class="form-global-paragraph">Share your knowledge with the community, create your own article</p>
 
           <p class="form-group">
             <label for="user-form-image">Article Image</label>
-            <div class="file-input-wrapper">
-              <input type="file" id="user-form-image" name="user_form_image" accept="image/*">
-              <label for="user-form-image" class="file-input-label">
-                <div class="form-subbmit-image">
-                  <div class="file-icon"><img src="./media/camera.svg" alt="Camera Icon" aria-hidden="true"></div>
-                  <div class="file-text">Click to select your image</div>
-                  <div class="file-subtext">PNG, JPG, GIF untill 5MB</div>
-                </div>
-              </label>
-            </div>
+          <div class="file-input-wrapper" id="image-file-container">
+            <input type="file" id="user-form-image" name="user_form_image" accept="image/*">
+            <label for="user-form-image" class="file-input-label">
+              <div class="form-subbmit-image">
+                <div class="file-icon"><img src="./media/camera.svg" alt="Camera Icon" aria-hidden="true"></div>
+                <div class="file-text">Click to select your image</div>
+                <div class="file-subtext">PNG, JPG, GIF untill 5MB</div>
+              </div>
+            </label>
+          </div>
 
-            <div id="previewContainer" class="preview-container">
-              <img id="previewImage" class="preview-image" src="" alt="Preview">
-              <div class="file-name" id="fileName"></div>
-              <button type="button" class="remove-btn" id="removeBtn">
-                  ✕ Delete Image
-              </button>
-            </div>
+          <p class="form-group" id="image-url-container" style="display: none;">
+            <label for="user-image-url">Image Url</label>
+            <input type="text" id="user-image-url" name="user_image_url" placeholder="Ex: https://shorturl.at/skEhy"
+              required title="Paste your image Url">
+            <small id="urlErrorMessage" style="color: red; display: none; margin-top: 5px;"></small>
+          </p>
+
+          <div id="previewContainer" class="preview-container">
+            <img id="previewImage" class="preview-image" src="" alt="Preview">
+            <div class="file-name" id="fileName"></div>
+            <button type="button" class="remove-btn" id="removeBtn">
+              ✕ Delete Image
+            </button>
+          </div>
+
+
+          <div class="form-radio-container">
+            <input type="radio" id="file" name="file_selection" value="File" checked onchange="toggleContainers()" />
+            <label for="file" class="radio-label">File</label>
+
+            <input type="radio" id="url" name="file_selection" value="Url" onchange="toggleContainers()" />
+            <label for="url" class="radio-label">URL</label>
+          </div>
 
           </p>
 
           <p class="form-group">
             <label for="user-article-title">Article Title</label>
-            <input type="text" id="user-article-title" name="user_article_title" placeholder="Ex: Your first Java desktop app" required  title="Fill with your article title" >
+            <input type="text" id="user-article-title" name="user_article_title"
+              placeholder="Ex: Your first Java desktop app" required title="Fill with your article title">
           </p>
 
           <p class="form-group">
             <label for="user-article-description">Description</label>
-            <textarea id="user-article-description" name="user_article_description" placeholder="Write a description for your article..." required title="Fill with your article description"></textarea>
+            <textarea id="user-article-description" name="user_article_description"
+              placeholder="Write a description for your article..." required
+              title="Fill with your article description"></textarea>
           </p>
 
           <p class="form-group">
             <label for="user-article-date">Release date</label>
-            <input type="date" id="user-article-date" name="user_article_date" required title="Select the article relase date">
+            <input type="date" id="user-article-date" name="user_article_date" required
+              title="Select the article relase date">
           </p>
 
           <p class="form-group">
             <label for="user-form-area">Area *</label>
-            <select value="today" id="user-form-area" name="user_form_area" required title="Select only one of the shown elements">
+            <select value="today" id="user-form-area" name="user_form_area" required
+              title="Select only one of the shown elements">
               <option value="">Select your article area</option>
               <option value="javascript">Javascript</option>
               <option value="devops">DevOps</option>
@@ -285,9 +324,9 @@
           </p>
 
           <button type="submit" class="btn-submit">Subbmit Your Article</button>
-          
+
         </form>
-        </div>
+      </div>
     </div>
 
   </main>
@@ -305,7 +344,7 @@
   </footer>
 
   <script src="app.js"></script>
-  
+
 </body>
 
 </html>

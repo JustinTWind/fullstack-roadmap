@@ -1,15 +1,81 @@
-const buttons = document.querySelectorAll(".category-button");
+const categoryButtonsElements = document.querySelectorAll(".category-button");
+const allArticles = document.querySelectorAll(".article-cards-container .article-card");
+const articlesContainerElement = document.querySelector("#articles");
 
-buttons.forEach((button) => {
+
+function filterArticles(selectedCategory) {
+  const filterText = selectedCategory.toLowerCase();
+
+  allArticles.forEach(article => {
+    const articleAreaElement = article.querySelector('[itemprop="articleSection"]');
+    const articleArea = articleAreaElement ? articleAreaElement.textContent.trim().toLowerCase() : '';
+
+    let shouldBeVisible;
+
+    if (filterText === 'all' || filterText === '') {
+      shouldBeVisible = true;
+    } else {
+      shouldBeVisible = articleArea === filterText;
+    }
+
+    if (shouldBeVisible) {
+      article.style.display = 'flex';
+    } else {
+      article.style.display = 'none';
+    }
+  });
+}
+categoryButtonsElements.forEach((button) => {
   button.addEventListener("click", function () {
-    if (button.classList.contains("active")) {
-      this.classList.remove("active"); //con this invocamos al elemento que triggereo el evento
+    const category = this.textContent.trim();
+    if (this.classList.contains("active")) {
+      this.classList.remove("active");
+      filterArticles("all");
       return;
     }
-    buttons.forEach((btn) => btn.classList.remove("active"));
+
+    categoryButtonsElements.forEach((btn) => btn.classList.remove("active"));
     this.classList.add("active");
+    filterArticles(category);
   });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  filterArticles("all");
+});
+
+const categoryDropdownBtn = document.querySelector(".category-dropdown-btn");
+const categoryDropdownMenu = document.querySelector(".category-dropdown-menu");
+
+if (categoryDropdownBtn && categoryDropdownMenu) {
+  categoryDropdownBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    const isExpanded =
+      categoryDropdownBtn.getAttribute("aria-expanded") === "true";
+    categoryDropdownBtn.setAttribute("aria-expanded", !isExpanded);
+    categoryDropdownMenu.classList.toggle("active");
+  });
+
+  const categoryButtons = categoryDropdownMenu.querySelectorAll("button");
+  categoryButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      categoryDropdownBtn.setAttribute("aria-expanded", "false");
+      categoryDropdownMenu.classList.remove("active");
+      const selectedCategory = button.textContent;
+      categoryDropdownBtn.querySelector("span").textContent = selectedCategory;
+    });
+  });
+
+  document.addEventListener("click", (e) => {
+    if (
+      !categoryDropdownBtn.contains(e.target) &&
+      !categoryDropdownMenu.contains(e.target)
+    ) {
+      categoryDropdownBtn.setAttribute("aria-expanded", "false");
+      categoryDropdownMenu.classList.remove("active");
+    }
+  });
+}
 
 const myFormElement = document.getElementById('article-form')
 
@@ -17,6 +83,7 @@ const imageInputElement = document.getElementById('user-form-image');
 const previewContainerElement = document.getElementById('previewContainer');
 const previewImageElement = document.getElementById('previewImage');
 const fileNameElement = document.getElementById('fileName');
+const urlErrorMessageElement = document.getElementById("urlErrorMessage");
 const removeBtnElement = document.getElementById('removeBtn');
 
 imageInputElement.addEventListener('change', function (e) {
@@ -40,20 +107,92 @@ imageInputElement.addEventListener('change', function (e) {
   }
 });
 
+
 removeBtnElement.addEventListener("click", function () {
   imageInputElement.value = "";
   previewImageElement.src = "";
   fileNameElement.textContent = "";
   previewContainerElement.classList.remove("active");
+  inputUrlElement.value = "";
+  urlErrorMessageElement.style.display = "none";
 });
 
-const articlesContainerElement = document.querySelector("#articles");
+const inputUrlElement = document.getElementById("user-image-url");
 const titleInputElement = document.querySelector("#user-article-title");
 const descriptionInputElement = document.querySelector("#user-article-description");
 const dateInputElement = document.getElementById("user-article-date");
 const areaInputElement = document.querySelector("#user-form-area");
 const today = getTodaysDate()
 dateInputElement.value = today;
+
+document.addEventListener("DOMContentLoaded", toggleContainers);
+
+function toggleContainers() {
+  const fileRadioElement = document.getElementById("file");
+  const urlContainerElement = document.getElementById("image-url-container");
+  const fileContainerElement = document.getElementById(
+    "image-file-container"
+  );
+
+  const previewContainerElement = document.getElementById("previewContainer");
+  const inputUrlElement = document.getElementById("user-image-url");
+
+  if (fileRadioElement.checked) {
+    urlContainerElement.style.display = "none";
+    urlErrorMessageElement.style.display = "none";
+    fileContainerElement.style.display = "block";
+    inputUrlElement.value = "";
+
+    if (!imageInputElement.files[0]) {
+      previewContainerElement.classList.remove("active");
+      previewImageElement.src = "";
+    }
+  } else {
+    fileContainerElement.style.display = "none";
+    urlContainerElement.style.display = "block";
+    imageInputElement.value = "";
+
+    if (inputUrlElement.value) {
+      previewImageElement.src = inputUrlElement.value;
+      previewContainerElement.classList.add("active");
+    } else {
+      previewContainerElement.classList.remove("active");
+      previewImageElement.src = "";
+    }
+  }
+}
+
+inputUrlElement.addEventListener("input", function () {
+  const url = inputUrlElement.value.trim();
+  urlErrorMessageElement.textContent = "";
+  urlErrorMessageElement.style.display = "none";
+
+  previewImageElement.onload = function () {
+    // El Onload solo funciona si el navegador se carga
+    if (inputUrlElement.value.trim()) {
+      previewContainerElement.classList.add("active");
+      fileNameElement.textContent = "Image URL";
+    }
+  };
+
+  previewImageElement.onerror = function () {
+    // Pos lo contrario
+    previewImageElement.src = "";
+    previewContainerElement.classList.remove("active");
+    urlErrorMessageElement.textContent = "❌ Error: Invalid URL or broken Link";
+    urlErrorMessageElement.style.display = "block";
+  };
+
+  if (url) {
+    previewImageElement.src = url;
+    previewContainerElement.classList.remove("active");
+    fileNameElement.textContent = "Loading...";
+  } else {
+    previewImageElement.src = "";
+    fileNameElement.textContent = "";
+    previewContainerElement.classList.remove("active");
+  }
+});
 
 function getTodaysDate() {
   // Los meses los cuenta como arrays, y el padstart es para la cantidad de dígitos
@@ -78,17 +217,23 @@ submitButtonElement.addEventListener('click', function () {
 
 myFormElement.addEventListener("submit", (event) => {
   event.preventDefault();
-  SaveInLocalStorage("articles");
-  location.reload();
+  try {
+    SaveInLocalStorage("articles");
+    location.reload();
+  } catch (error) {
+    alert('❌ Error - Article Not Subbmited');
+  }
 });
 
-document.addEventListener("DOMContentLoaded", (event) => {
-  event.preventDefault();
+document.addEventListener("DOMContentLoaded", () => {
   renderArticles("articles");
 });
 
 async function SaveInLocalStorage(key) {
-  var imageUrl = await ConvertImageToURL(imageInputElement.files[0]);
+  let imageUrl = null;
+  if (imageInputElement.files && imageInputElement.files[0]) {
+    imageUrl = await ConvertImageToURL(imageInputElement.files[0]);
+  }
 
   const data = {
     title: titleInputElement.value,
@@ -99,42 +244,37 @@ async function SaveInLocalStorage(key) {
   };
 
   if (LocalStorageHasItem(key)) {
-    currentData = JSON.parse(localStorage.getItem(key));
-    currentData.push(data);
-
-    localStorage.setItem(key, JSON.stringify(currentData));
-    console.log(`Actualizado correctamente ${currentData}`);
+    currentData = JSON.parse(localStorage.getItem(key)); // para obtener articles
+    currentData.push(data); // Para pushear el elemento
+    localStorage.setItem(key, JSON.stringify(currentData)); // Para sobreescribir el local storage
   } else {
-    arr = [data];
-    localStorage.setItem(key, JSON.stringify(arr));
-    console.log(`Creado correctamente ${arr}`);
+    arr = [data]; // Crear Articles
+    localStorage.setItem(key, JSON.stringify(arr)); // pa crearlo si primera vez
   }
 }
 
 function LocalStorageHasItem(item) {
-  response = localStorage.getItem(item);
-  if (response) {
-    return true;
-  } else {
-    return false;
-  }
+  return localStorage.getItem(item) !== null;
 }
 
 function ConvertImageToURL(file) {
+
+  if (!file) {
+    return Promise.resolve(null);
+  }
+
   return new Promise((resolve, reject) => {
     const reader = new FileReader();
 
-    reader.onload = () => resolve(reader.result); // aquí se consigue la URL base64
+    reader.onload = () => resolve(reader.result); // Cuando se termina de ejecutar
     reader.onerror = () => reject(reader.error);
 
-    reader.readAsDataURL(file);
+    reader.readAsDataURL(file); // aquí se consigue la URL base64
   });
 }
 
 function renderArticles(key) {
   data = JSON.parse(localStorage.getItem(key));
-
-  console.log(data);
 
   if (data) {
     const getElementTemplate = document.querySelector("#article-template");
@@ -142,10 +282,20 @@ function renderArticles(key) {
     data.forEach((element) => {
       const cloneElementTemplate = getElementTemplate.content.cloneNode(true);
 
-      cloneElementTemplate.querySelector(".article-card-image").src =
-        element.imageurl;
-      cloneElementTemplate.querySelector(".article-card-image").alt =
-        element.title;
+      const imgElement = cloneElementTemplate.querySelector(
+        ".article-card-image"
+      );
+
+      if (element.imageurl) {
+        imgElement.src = element.imageurl;
+        imgElement.alt = element.title;
+        cloneElementTemplate.querySelector(".article-card-image").alt =
+          element.title;
+      } else {
+        imgElement.src = "./media/camera-slash.svg";
+        imgElement.alt = "No image";
+      }
+
       cloneElementTemplate.querySelector(".article-card-title").textContent =
         element.title;
       cloneElementTemplate.querySelector(".article-card-info").textContent =
