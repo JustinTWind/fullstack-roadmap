@@ -1,0 +1,1 @@
+// Write a JavaScript function that accepts a string as an argument and collapses repeated spaces into a single space
