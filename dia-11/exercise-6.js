@@ -22,7 +22,7 @@ function checkUserAuthorizationState(user) {
   const token = user.sessionToken != "" && user.sessionToken != null && typeof user.sessionToken == "string";
   const role = Array.isArray(user.userRoles) && user.userRoles.includes("admin");
   const suspended = !user.isSuspended || user.suspensionReason === "pending_review";
-  
+
   if (!(status && token && role && suspended)) {
     return false
   }

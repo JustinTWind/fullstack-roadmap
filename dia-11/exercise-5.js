@@ -4,6 +4,11 @@
 
 
 function capitalizeEachWord(sentence) {
+  if (!sentence || sentence == null) {
+    console.log("Escribe Algo");
+    return "";
+  }
+  
   const words = sentence.split(" ");
   const capitalizedWords = words.map(word => {
     if (word.length === 0) {
@@ -14,4 +19,4 @@ function capitalizeEachWord(sentence) {
   return capitalizedWords.join(" ");
 }
 
-console.log(capitalizeEachWord("detsakjdkjsadkjsad asdsad asdasd asdsad sadsa"));
+console.log(capitalizeEachWord("sadsad asdsa asd"));

@@ -2,6 +2,11 @@
 
 
 function howManyVowels(words) {
+  if (!words || words == null) {
+    console.log("Escribe Algo");
+    return "";
+  }
+
   const string = [...words]
   const vowels = { "a": 0, "e": 0, "i": 0, "o": 0, "u": 0 }
   string.forEach((character) => {
