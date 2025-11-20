@@ -21,13 +21,8 @@ function checkUserAuthorizationState(user) {
   const status = user.accountStatus === "active";
   const token = user.sessionToken != "" && user.sessionToken != null && typeof user.sessionToken == "string";
   const role = Array.isArray(user.userRoles) && user.userRoles.includes("admin");
-  const suspended = user.isSuspended  && user.suspensionReason !== "pending_review"
-
-  console.log(status)
-  console.log(token)
-  console.log(role)
-  console.log(suspended)
-
+  const suspended = !user.isSuspended || user.suspensionReason === "pending_review";
+  
   if (!(status && token && role && suspended)) {
     return false
   }
@@ -42,7 +37,7 @@ const users = [
     userRoles: ["editor", "admin"],
     isSuspended: false,
     suspensionReason: null,
-  },
+  }, 
   {
     accountStatus: "active",
     sessionToken: "someValidToken123",
@@ -101,4 +96,4 @@ const users = [
   },
 ];
 
-console.log(checkUserAuthorizationState(users[8]))
+console.log(checkUserAuthorizationState(user1))
