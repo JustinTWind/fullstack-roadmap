@@ -5,7 +5,6 @@
 
 function capitalizeEachWord(sentence) {
   const words = sentence.split(" ");
-
   const capitalizedWords = words.map(word => {
     if (word.length === 0) {
       return "";

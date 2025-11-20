@@ -4,13 +4,11 @@
 function howManyVowels(words) {
   const string = [...words]
   const vowels = { "a": 0, "e": 0, "i": 0, "o": 0, "u": 0 }
-
   string.forEach((character) => {
     for (let [key] of Object.entries(vowels)) {
       if (character == key) vowels[key]++
     }
   })
-
   return vowels
 }
 

@@ -17,8 +17,21 @@ const user1 = {
   suspensionReason: null, // Can be a string or null
 };
 
-function checkUserAuthorizationState() {
-  // develop your logic here
+function checkUserAuthorizationState(user) {
+  const status = user.accountStatus === "active";
+  const token = user.sessionToken != "" && user.sessionToken != null && typeof user.sessionToken == "string";
+  const role = user.userRoles != [] && typeof user.userRoles == "object"
+  const suspended = user.isSuspended == false || user.isSuspended == true && user.suspensionReason === "pending_review"
+
+  console.log(status)
+  console.log(token)
+  console.log(role)
+  console.log(suspended)
+
+  if (!(status && token && role && suspended)) {
+    return false
+  }
+
   return true;
 }
 
@@ -87,3 +100,5 @@ const users = [
     suspensionReason: null,
   },
 ];
+
+console.log(checkUserAuthorizationState(users[0]))
