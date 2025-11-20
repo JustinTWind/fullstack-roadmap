@@ -20,8 +20,8 @@ const user1 = {
 function checkUserAuthorizationState(user) {
   const status = user.accountStatus === "active";
   const token = user.sessionToken != "" && user.sessionToken != null && typeof user.sessionToken == "string";
-  const role = user.userRoles != [] && typeof user.userRoles == "object"
-  const suspended = user.isSuspended == false || user.isSuspended == true && user.suspensionReason === "pending_review"
+  const role = Array.isArray(user.userRoles) && user.userRoles.includes("admin");
+  const suspended = user.isSuspended  && user.suspensionReason !== "pending_review"
 
   console.log(status)
   console.log(token)
@@ -101,4 +101,4 @@ const users = [
   },
 ];
 
-console.log(checkUserAuthorizationState(users[0]))
+console.log(checkUserAuthorizationState(users[8]))
