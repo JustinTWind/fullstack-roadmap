@@ -37,7 +37,7 @@ const users = [
     userRoles: ["editor", "admin"],
     isSuspended: false,
     suspensionReason: null,
-  }, 
+  },
   {
     accountStatus: "active",
     sessionToken: "someValidToken123",
@@ -94,6 +94,13 @@ const users = [
     isSuspended: false,
     suspensionReason: null,
   },
+  {
+    accountStatus: "active",
+    sessionToken: "someValidToken123",
+    userRoles: [],
+    isSuspended: true,
+    suspensionReason: "big_fault",
+  },
 ];
 
-console.log(checkUserAuthorizationState(user1))
+console.log(checkUserAuthorizationState(users[1]))

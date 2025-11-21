@@ -9,3 +9,4 @@ function removeCharacter(word, character) {
 }
 
 console.log(removeCharacter("hola mundo", "o"))
+

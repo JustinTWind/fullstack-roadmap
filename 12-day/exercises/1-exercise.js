@@ -1,0 +1,6 @@
+/*
+
+  Create a function countObjectProperties that receives an object as a parameter.
+  The function should return the number of enumerable own properties that the object possesses.
+
+*/
