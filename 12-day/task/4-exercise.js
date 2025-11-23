@@ -33,12 +33,16 @@ person.greet();
  *      then add the object address to the person.
  */
 const address = {
-  city: "Springfield",
-  street: "Calle Siempre viva",
-  country: "USA",
+  city: "",
+  street: "",
+  country: "",
 };
 
 // develop your code here
+
+address.city = "Springfield"
+address.street = "Calle Siempre viva";
+address.country = "USA"
 
 person.address = address
 
@@ -73,14 +77,15 @@ const dogs = {
 
 // develop your code here
 
-person.dogs = dogs
+person.pets = dogs
 
-person.listPets = function () {
-  console.log(Object.keys(dogs))
+person.listPets = function(pet) {
+  console.log(Object.keys(person[pet]))
 }
 
 // end
-person.listPets();
+
+person.listPets("pets");
 
 /**
  *  5.  it can't be true, we forget to add gender to our pets
@@ -98,13 +103,11 @@ const dogsGender = {
 // develop your code here
 
 for (key in person.dogs) {
-  console.log(key)
   person.dogs[key].gender = dogsGender[key]
 }
 
 person.petInfo = function (pet) {
-  let keys = Object.keys(person.dogs[pet]);
-  console.log(`${pet} is ${person.dogs[pet].age} years old and is a ${person.dogs[pet].gender} dog`)
+  console.log(`${pet} is ${person.pets[pet].age} years old and is a ${person.pets[pet].gender} dog`)
 }
 
 // end
