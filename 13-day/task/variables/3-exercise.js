@@ -14,6 +14,7 @@ console.log(firstCharacter); // this should print "P".
 
 // Now do the same but for the last character in a variable that named lastCharacter
 
+// let lastCharcter = string.at(-1)
 let lastCharacter = string1.charAt(string1.length-1);
 
 

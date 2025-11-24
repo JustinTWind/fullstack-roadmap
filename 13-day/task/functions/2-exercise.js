@@ -11,6 +11,9 @@ sumNumbers(2); // should print "you should provide two numbers"
 // ******************* DONT MODIFY - END *******************
 
 function sumNumbers(userNumberOne, userNumberTwo) {
+
+  // !Number.isFinite(userNumberOne) De mateo, buenísimo
+
   if (
     isNaN(Number(userNumberOne)) ||
     isNaN(Number(userNumberTwo)) ||
@@ -20,6 +23,5 @@ function sumNumbers(userNumberOne, userNumberTwo) {
     console.log("You should provide two numbers");
     return;
   }
-  console.log(`
-    the sum is: ${Number(userNumberOne) + Number(userNumberTwo)}`);
+  console.log(`the sum is: ${Number(userNumberOne) + Number(userNumberTwo)}`);
 }
