@@ -9,8 +9,8 @@ function numberDifferenceWith13(userNumber) {
   return userNumber == null || isNaN(userNumber)
     ? "Invalid number"
     : userNumber > 13
-      ? (userNumber - 13) * 2
-      : 13 - userNumber ;
+      ? Math.abs((userNumber - 13) * 2)
+      : 13 - userNumber;
 } ;
 
 console.log(numberDifferenceWith13(10));
