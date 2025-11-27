@@ -11,7 +11,7 @@ function numberDifferenceWith13(userNumber) {
     : userNumber > 13
       ? Math.abs((userNumber - 13) * 2)
       : 13 - userNumber;
-} ;
+};
 
 console.log(numberDifferenceWith13(10));
 console.log(numberDifferenceWith13(14));

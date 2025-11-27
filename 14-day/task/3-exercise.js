@@ -7,7 +7,7 @@ function stringWithPy(userString) {
   if (typeof userString !== 'string') return "Non an available parameter";
   return userString.trim().substring(0, 2).toLowerCase() === "py" // si lo queremos sin que sea case sensitive, sino, solo se quita el tolocaleLowerCase
     ? userString
-    : userString + "Py";
+    : "Py" + userString;
 };
 
 console.log(stringWithPy(undefined));

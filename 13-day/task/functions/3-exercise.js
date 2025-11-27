@@ -28,3 +28,4 @@ function rightTriangleArea(triangleLength, triangleHeight) {
   }
   console.log(0.5 * triangleLength * triangleHeight);
 }
+

@@ -10,7 +10,7 @@ console.log(number1 + number2)
 
 // Now print the number 1 but simultaneously adds 1 to the number1 on the same line where you print it.
 
-console.log(number1 += 1)
+console.log(number1++)
 
 // ******************* DONT MODIFY - START *******************
 console.log(number1); // this should print 5.
