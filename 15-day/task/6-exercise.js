@@ -30,3 +30,4 @@ Versión otorgada por la página
 
 console.log(itIsLeapYear(16))
 console.log(itIsLeapYearCondensed(1900));
+console.log(itIsLeapYearCondensed(2002));
