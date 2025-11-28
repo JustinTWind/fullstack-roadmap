@@ -6,8 +6,8 @@
 
 */
 
-function isWithin20Of100Or400(UserInteger) {
+function isInRange(UserInteger) {
   return Math.abs(100 - UserInteger) <= 20 || Math.abs(400 - UserInteger) <= 20;
 }
 
-console.log(isWithin20Of100Or400(379));
+console.log(isInRange(379));

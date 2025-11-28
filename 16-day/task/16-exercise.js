@@ -17,5 +17,3 @@ console.log(sumOrTripleIfEqual(10, 10));
 console.log(sumOrTripleIfEqual(10, 20));
 console.log(sumOrTripleIfEqual(20, 20));
 
-// Expresion ? SiLaExpresionEsTrue : SiLaExpresionEsFalse
-// Statement

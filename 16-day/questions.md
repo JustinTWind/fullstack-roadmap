@@ -1,4 +1,3 @@
-
 # ❓ Preguntas de ciclos, operadores y loops
 
 ---

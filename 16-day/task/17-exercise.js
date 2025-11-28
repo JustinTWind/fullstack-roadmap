@@ -7,11 +7,11 @@
 
 */
 
-function numberDifferenceWith19(userNumber) {
+function DifferenceWith19(userNumber) {
   return userNumber > 19
     ? Math.abs(userNumber - 19) * 3
     : Math.abs(userNumber - 19);
 }
 
-console.log(numberDifferenceWith19(20));
-console.log(numberDifferenceWith19(10));
+console.log(DifferenceWith19(20));
+console.log(DifferenceWith19(10));
