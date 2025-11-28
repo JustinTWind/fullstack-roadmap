@@ -7,3 +7,19 @@
 
 
 */
+
+function wichIsLargerInRange(givenNumber1, givenNumber2) {
+  const rangeCheck =
+    givenNumber1 >= 45 &&
+    givenNumber1 <= 60 &&
+    givenNumber2 >= 45 &&
+    givenNumber2 <= 60;
+
+  if (!rangeCheck) return "Invalid Input";
+
+  return Math.max(givenNumber1, givenNumber2);
+}
+
+console.log(wichIsLargerInRange(45, 46));
+console.log(wichIsLargerInRange(25, 60));
+console.log(wichIsLargerInRange(45, 80));

@@ -14,3 +14,12 @@
     - If the student achieves an A+ grade, the program should return 'true'; otherwise, it should return 'false'.
 
 */
+
+function studentsTotalMarks(totalMarks, isFinalExam) {
+  if (isFinalExam) return totalMarks >= 90;
+  return totalMarks >= 89;
+}
+
+console.log(studentsTotalMarks("90", true));
+console.log(studentsTotalMarks("89", false));
+console.log(studentsTotalMarks("78", false));

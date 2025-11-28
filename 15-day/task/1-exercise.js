@@ -16,19 +16,21 @@ const todayMinute = today.getMinutes();
 
 const todaySecond = today.getSeconds();
 
-const meridiem = todayHour > 12 ? "PM" : "AM"
+const meridiem = todayHour > 12 ? "PM" : "AM";
 
 const daysOfTheWeek = [
+  "Sunday",
   "Monday",
   "Tuesday",
   "Wednesday",
   "Thursday",
   "Friday",
-  "Saturday",
-  "Sunday",
+  "Saturday"
 ];
 
-const currentDate = daysOfTheWeek[ today.getDay() - 1 ]
+const currentDate = daysOfTheWeek[today.getDay()];
 
-console.log(`Today is : ${currentDate}.`)
-console.log(`Current time is : ${todayHour} ${meridiem} : ${todayMinute} : ${todaySecond}`)
+console.log(`Today is : ${currentDate}.`);
+console.log(
+  `Current time is : ${todayHour} ${meridiem} : ${todayMinute} : ${todaySecond}`
+);
