@@ -6,3 +6,8 @@
 
 */
 
+function reversedString(givenString) {
+  return givenString.split("").reverse().join("")
+}
+
+console.log(reversedString("Hola Mundo"))

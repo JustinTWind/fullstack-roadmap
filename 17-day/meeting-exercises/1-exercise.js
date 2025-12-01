@@ -1,8 +1,7 @@
 /*
 
-  46. Check if Only One Integer is Multiple of 7 or 11
-  
-    Write a JavaScript program to check two given non-negative integers if one (not both) is a multiple of 7 or 11.  
+  Write a JavaScript program to check two given non-negative integers
+  if one (not both) is a multiple of 7 or 11.
 
 */
 
@@ -36,4 +35,3 @@ console.log(checkMultiples(null, 1));
 console.log(checkMultiples(1, undefined));
 console.log(checkMultiples(NaN, 1));
 console.log(checkMultiples(1, NaN));
-console.log(checkMultiples(-1, -10));
