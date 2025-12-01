@@ -7,5 +7,10 @@
 
 */
 
+function removeBorderCharacters(givenString) {
+  return givenString.trim().slice(1,-1)
+}
 
 
+console.log(removeBorderCharacters("Hola Mundo"));
+console.log(removeBorderCharacters("JavaScript"));

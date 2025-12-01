@@ -8,7 +8,6 @@
 */
 
 function caesarCipher(givenString) {
-
   const alphabet = [
     "a",
     "b",
@@ -39,9 +38,16 @@ function caesarCipher(givenString) {
     "z",
   ];
 
-  const ArrayString = givenString.split("")
-  const stringEncrypted.map(character => {
-    console.log(character)
-  })
+  const arrayString = givenString.toLowerCase().split("");
+  const encryptedString = [];
+
+  arrayString.forEach((character) => {
+    const actualCharacterIndex = alphabet.indexOf(character);
+    encryptedString.push(alphabet[actualCharacterIndex + 1]);
+  });
+
+  return encryptedString.join(" ");
 }
 
+console.log(caesarCipher("Halo"));
+console.log(caesarCipher("Hello World"));

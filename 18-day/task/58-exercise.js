@@ -7,3 +7,11 @@
 
 */
 
+function LastDigitsCopies(givenString) {
+  if (givenString.length < 3)
+    return "The string must have at least 3 characters";
+  return givenString.trim().slice(-3).repeat(4);
+}
+
+console.log(LastDigitsCopies("hola Mundo"));
+console.log(LastDigitsCopies("Python"));

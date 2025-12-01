@@ -7,3 +7,10 @@
 
 */
 
+function checkSeparationBAndA(givenString) {
+  return givenString.search(/a...b/i) !== -1;
+}
+
+console.log(checkSeparationBAndA("Hola Mundo"));
+console.log(checkSeparationBAndA("Chainsbreak"));
+console.log(checkSeparationBAndA("a   b"));
