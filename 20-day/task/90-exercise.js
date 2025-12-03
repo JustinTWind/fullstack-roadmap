@@ -6,5 +6,9 @@
 
 */
 
+function findKGreatestElement(givenArray, PositionK) {
+  return givenArray.toSorted().at(-PositionK);
+}
 
-
+console.log(findKGreatestElement([1, 2, 6, 4, 5], 3));
+console.log(findKGreatestElement([-10, -25, -47, -36, 0], 1));

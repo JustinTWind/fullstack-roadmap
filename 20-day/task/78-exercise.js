@@ -6,3 +6,9 @@
 
 */
 
+function checkNotNumbers(givenArray) {
+  return !(givenArray.includes(1) || givenArray.includes(3));
+}
+console.log(checkNotNumbers([1, 5]));
+console.log(checkNotNumbers([0, 5]));
+console.log(checkNotNumbers([2, 3]));

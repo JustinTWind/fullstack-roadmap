@@ -9,3 +9,12 @@
 
 */
 
+function checkIntegersSimilarity(givenNumber1, givenNumber2, divisor) {
+  return givenNumber1 % divisor === 0 && givenNumber2 % divisor === 0;
+}
+
+console.log(checkIntegersSimilarity(10, 25, 5));
+console.log(checkIntegersSimilarity(10, 20, 5));
+console.log(checkIntegersSimilarity(10, 20, 4));
+console.log(checkIntegersSimilarity(10, 20, 2));
+console.log(checkIntegersSimilarity(30, 17, 2));

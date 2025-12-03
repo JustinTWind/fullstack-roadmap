@@ -6,3 +6,11 @@
     The array length should be 0, 1, or 2.  
 
 */
+
+function checkNumberTwice(givenArray) {
+  if (givenArray.length < 0 || givenArray.length > 2)
+    return "Invalind Array length";
+  return givenArray[0] === givenArray[1];
+}
+console.log(checkNumberTwice([30, 30]));
+console.log(checkNumberTwice([15, 30]));
