@@ -7,4 +7,9 @@
 
 */
 
+function moveFrontCharacters(givenString) {
+  const firstCharacters = givenString.trim().slice(0, 3);
+  return givenString.trim().slice(3) + firstCharacters;
+}
 
+console.log(moveFrontCharacters("Python"));

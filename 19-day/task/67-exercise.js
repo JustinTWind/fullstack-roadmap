@@ -7,3 +7,14 @@
     if the first or last character is 'P'. Return the original string if the condition is not satisfied.  
 
 */
+
+function removeByP(givenString) {
+  const arrayString = givenString.trim().split("");
+  if (givenString.toLowerCase().trim()[0] === "p") arrayString.shift();
+  if (givenString.toLowerCase().trim().at(-1) === "p") arrayString.pop();
+  return arrayString.join("");
+}
+
+console.log(removeByP("PythonP"));
+console.log(removeByP("Python"));
+console.log(removeByP("PjavascriptP"));

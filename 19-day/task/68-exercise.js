@@ -7,3 +7,12 @@
 
 */
 
+function extractFirstAndLastN(givenString, nCharacters) {
+  return (
+    givenString.trim().slice(0, nCharacters) +
+    givenString.trim().slice(-nCharacters)
+  );
+}
+
+console.log(extractFirstAndLastN("Javascript", 2));
+console.log(extractFirstAndLastN("Javascript", 3));

@@ -36,6 +36,7 @@ function caesarCipher(givenString) {
     "x",
     "y",
     "z",
+    "a"
   ];
 
   const arrayString = givenString.toLowerCase().split("");

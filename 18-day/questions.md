@@ -34,3 +34,5 @@
 3.  ¿Es válida la siguiente forma para crear un objeto de tipo `Date`? `const d = new Date("2022-03-25");`
 
 4.  ¿Desde qué fecha se guardan los números de milisegundos para las fechas en JavaScript?
+
+---
