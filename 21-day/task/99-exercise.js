@@ -7,3 +7,12 @@
 
 */
 
+function checkRearrangeOfStrings(originalString, rearrangedString) {
+  return (
+    originalString.split("").sort().join("") ===
+    rearrangedString.split("").sort().join("")
+  );
+}
+
+console.log(checkRearrangeOfStrings("xyz", "zyx"));
+console.log(checkRearrangeOfStrings("xyz", "zyp"));
