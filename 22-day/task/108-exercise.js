@@ -20,7 +20,6 @@ console.log(dotProduct([1, 2, 3], [1, 2, 3]));
 console.log(dotProduct([2, 4, 6], [2, 4, 6]));
 console.log(dotProduct([1, 1, 1], [0, 1, -1]));
 
-
 // Con el Reduce
 
 function dotProductReduce(givenArray1, givenArray2) {

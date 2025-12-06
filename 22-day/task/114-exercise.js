@@ -7,3 +7,25 @@
 
 
 */
+
+function checkCorrectSentence(givenString) {
+  return givenString.at(-1) === "." && /[A-Z]/.test(givenString[0]);
+}
+
+console.log(
+  checkCorrectSentence(
+    "This tool will help you write better English and efficiently corrects texts."
+  )
+);
+
+console.log(
+  checkCorrectSentence(
+    "this tool will help you write better English and efficiently corrects texts."
+  )
+);
+
+console.log(
+  checkCorrectSentence(
+    "This tool will help you write better English and efficiently corrects texts"
+  )
+);

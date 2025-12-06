@@ -6,3 +6,18 @@
     where n is a positive integer and all divisions are integers. 
 
 */
+
+function sumOfNDivisions(givenNumber) {
+  let sum = 0;
+
+  while (givenNumber > 0) {
+    sum += givenNumber;
+    givenNumber = Math.floor(givenNumber / 2);
+  }
+
+  return sum;
+}
+
+console.log(sumOfNDivisions(8));
+console.log(sumOfNDivisions(9));
+console.log(sumOfNDivisions(26));

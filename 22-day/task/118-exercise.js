@@ -6,4 +6,10 @@
 
 */
 
+function checkNumberInRange(givenNumber1, givenNumber2, givenNumber3) {
+  return givenNumber2 >= givenNumber1 && givenNumber2 <= givenNumber3;
+}
 
+console.log(checkNumberInRange(1, 2, 3));
+console.log(checkNumberInRange(1, 2, -3));
+console.log(checkNumberInRange(1.1, 1.2, 1.3));

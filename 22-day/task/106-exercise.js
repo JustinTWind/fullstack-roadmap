@@ -9,11 +9,11 @@
 
 function divideUntillFloat(dividend, divisor) {
   while (dividend % divisor === 0) {
-    dividend /= divisor
+    dividend /= divisor;
   }
-  return dividend
+  return dividend;
 }
 
-console.log(divideUntillFloat(-12,2))
-console.log(divideUntillFloat(13,2))
-console.log(divideUntillFloat(13,1))
+console.log(divideUntillFloat(-12, 2));
+console.log(divideUntillFloat(13, 2));
+console.log(divideUntillFloat(13, 1));

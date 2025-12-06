@@ -7,23 +7,22 @@
 */
 
 function sortPrimes(givenNumber) {
-  const primeNumbers = []
+  const primeNumbers = [];
   for (let index = 2; index <= givenNumber; index++) {
     if (wilsonTheoreme(index)) {
-      primeNumbers.push(index)
+      primeNumbers.push(index);
     }
   }
-  return primeNumbers
+  return primeNumbers;
 }
 
 function wilsonTheoreme(givenNumber) {
-  let factorial = 1
+  let factorial = 1;
   for (let index = givenNumber - 1; index >= 1; index--) {
-    factorial *= index
+    factorial *= index;
   }
-  return ((factorial + 1) % givenNumber === 0)
+  return (factorial + 1) % givenNumber === 0;
 }
 
-
-console.log(sortPrimes(19))
-console.log(sortPrimes(100))
+console.log(sortPrimes(19));
+console.log(sortPrimes(100));
