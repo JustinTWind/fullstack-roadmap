@@ -6,4 +6,22 @@
 
 */
 
+function swapCapitalization(givenString) {
+  const stringArray = givenString.split("");
+  
+  stringArray.forEach((element, index) => {
+    if (element === element.toLowerCase()) {
+      stringArray[index] = element.toUpperCase();
+    }
 
+    if (element === element.toUpperCase()) {
+      stringArray[index] = element.toLowerCase();
+    }
+  });
+
+  return stringArray.join("");
+}
+
+console.log(swapCapitalization("w3resource"));
+console.log(swapCapitalization("Germany"));
+console.log(swapCapitalization("HoLa MuNdO"));
