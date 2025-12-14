@@ -8,5 +8,54 @@
 
 */
 
+function checkLowerTriangularMatrix(givenArray) {
+  let isLowerTriangularFlag = true;
+  let positionCounter = 1;
 
+  givenArray.forEach((array) => {
+    const arrayLength = array.length;
 
+    for (let index = positionCounter; index < arrayLength; index++) {
+      if (array[index] !== 0) {
+        isLowerTriangularFlag = false;
+      }
+    }
+
+    positionCounter++;
+  });
+
+  return isLowerTriangularFlag;
+}
+
+console.log(
+  checkLowerTriangularMatrix([
+    [1, 0, 0],
+    [2, 0, 0],
+    [0, 3, 3],
+  ])
+);
+
+console.log(
+  checkLowerTriangularMatrix([
+    [1, 0, 1],
+    [2, 0, 0],
+    [0, 3, 3],
+  ])
+);
+
+console.log(
+  checkLowerTriangularMatrix([
+    [1, 0, 0],
+    [2, 0, 1],
+    [0, 3, 1],
+  ])
+);
+
+console.log(
+  checkLowerTriangularMatrix([
+    [1, 0, 0, 0],
+    [2, 1, 0, 0],
+    [0, 3, 1, 0],
+    [1, 2, 3, 4],
+  ])
+);

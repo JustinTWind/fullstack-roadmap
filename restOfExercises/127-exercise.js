@@ -8,3 +8,17 @@
     234 -> 11101010 -> 01010111 -> 87
 
 */
+
+function reverseBits(givenNumber) {
+  let arrayNumberOnByte = givenNumber
+    .toString(2)
+    .padStart(8, 0)
+    .split("")
+    .reverse();
+
+  return parseInt(arrayNumberOnByte.join(""), 2);
+}
+
+console.log(reverseBits(14));
+console.log(reverseBits(56));
+console.log(reverseBits(234));

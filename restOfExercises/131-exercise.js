@@ -12,3 +12,13 @@
     y2 = x0 + x1+ x2
 
 */
+
+function cumulativeSum(givenArray) {
+  let total = 0;
+  return givenArray.map((element) => {
+    return (total += element);
+  });
+}
+
+console.log(cumulativeSum([1, 2, 3, 4, 5]));
+console.log(cumulativeSum([1, 2, -3, 4, 5]));

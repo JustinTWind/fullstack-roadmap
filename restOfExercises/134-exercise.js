@@ -7,3 +7,18 @@
 
 */
 
+// prueba.codePointAt() - 96) % 26
+
+function reverseAlphabeth(givenString) {
+  let stringArray = givenString.toLowerCase().split("");
+
+  return stringArray
+    .map((element) => {
+      const characterInAlphabeth = element.codePointAt() - 97;
+      return String.fromCharCode(26 - characterInAlphabeth + 96);
+    })
+    .join("");
+}
+
+console.log(reverseAlphabeth("python"));
+console.log(reverseAlphabeth("abcxyz"));

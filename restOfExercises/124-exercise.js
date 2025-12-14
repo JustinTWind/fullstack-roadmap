@@ -14,3 +14,10 @@
 
 */
 
+function norOfBoleans(givenBoolean1, givenBoolean2) {
+  return !givenBoolean1 && !givenBoolean2;
+}
+
+console.log(norOfBoleans(true, false));
+console.log(norOfBoleans(false, false));
+console.log(norOfBoleans(true, true));
