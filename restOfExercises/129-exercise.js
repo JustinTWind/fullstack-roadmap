@@ -10,23 +10,23 @@ function smallestPrime(givenNumber) {
   do {
     givenNumber++;
   } while (checkPrime(givenNumber) !== true);
-  return givenNumber
+  return givenNumber;
 }
 
 function checkPrime(givenNumber) {
-  const numbersToCheck = Math.floor(Math.sqrt(givenNumber))
-  for (let index = 2; index <= numbersToCheck ; index++) {
+  const numbersToCheck = Math.floor(Math.sqrt(givenNumber));
+  for (let index = 2; index <= numbersToCheck; index++) {
     if (givenNumber % index === 0) {
-      return false
+      return false;
     }
   }
-  return true
+  return true;
 }
 
-console.log(smallestPrime(3))
-console.log(smallestPrime(17))
-console.log(smallestPrime(100))
-console.log(smallestPrime(400))
-console.log(smallestPrime(45))
-console.log(smallestPrime(48))
-console.log(smallestPrime(62))
+console.log(smallestPrime(3));
+console.log(smallestPrime(17));
+console.log(smallestPrime(100));
+console.log(smallestPrime(400));
+console.log(smallestPrime(45));
+console.log(smallestPrime(48));
+console.log(smallestPrime(62));

@@ -7,7 +7,7 @@
 */
 
 function reverse16Bits(givenNumber) {
-  let arrayNumberOnByte = givenNumber
+  const arrayNumberOnByte = givenNumber
     .toString(2)
     .padStart(16, 0)
     .split("")

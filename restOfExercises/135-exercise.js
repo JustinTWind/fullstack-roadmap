@@ -6,7 +6,8 @@
     
 */
 
-function removeRepetitions(givenString) { //Curioso
+function removeRepetitions(givenString) {
+  //Curioso
   return givenString.replace(/./g, (match, index, fullString) => {
     if (fullString.indexOf(match) === fullString.lastIndexOf(match)) {
       return match;

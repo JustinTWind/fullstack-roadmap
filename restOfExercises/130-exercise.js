@@ -12,7 +12,7 @@ function countEventDigits(givenNumber) {
     if (element % 2 === 0) {
       return ++totalEvenDigits;
     }
-    
+
     return totalEvenDigits;
   }, 0);
 }

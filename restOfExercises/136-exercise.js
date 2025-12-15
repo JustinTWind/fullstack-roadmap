@@ -8,9 +8,9 @@
 */
 
 function replaceFirstDigit(givenString) {
-  return givenString.replace(/\d/, "$")
+  return givenString.replace(/\d/, "$");
 }
 
-console.log(replaceFirstDigit("abc1dabc"))
-console.log(replaceFirstDigit("p3ython"))
-console.log(replaceFirstDigit("Hello wor1d"))
+console.log(replaceFirstDigit("abc1dabc"));
+console.log(replaceFirstDigit("p3ython"));
+console.log(replaceFirstDigit("Hello wor1d"));

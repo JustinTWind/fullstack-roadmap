@@ -8,7 +8,7 @@
 
 function swapCapitalization(givenString) {
   const stringArray = givenString.split("");
-  
+
   stringArray.forEach((element, index) => {
     if (element === element.toLowerCase()) {
       stringArray[index] = element.toUpperCase();

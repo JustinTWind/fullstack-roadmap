@@ -8,13 +8,11 @@
 */
 
 function breakUrl(givenUrl) {
+  const protocol = givenUrl.split("://")[0];
+  const domain = givenUrl.split(/\/|.com/)[2];
+  const page = givenUrl.split("/")[3];
 
-  const protocol = givenUrl.split("://")[0]
-  const domain = givenUrl.split(/\/|.com/)[2]
-  const page = givenUrl.split("/")[3]
-  
-  return [protocol, domain, page]
-
+  return [protocol, domain, page];
 }
 
 console.log(breakUrl("https://www.w3resource.com/javascript-exercises/"));

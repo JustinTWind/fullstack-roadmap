@@ -7,14 +7,14 @@
 */
 
 function maximumSecuence(givenNumber) {
-  let secuenceSum = 1
-  let counter = 0
+  let secuenceSum = 1;
+  let counter = 0;
   while (secuenceSum < givenNumber) {
-    secuenceSum += ++counter
+    secuenceSum += ++counter;
   }
-  return counter
+  return counter;
 }
 
-console.log(maximumSecuence(11))
-console.log(maximumSecuence(15))
-console.log(maximumSecuence(17))
+console.log(maximumSecuence(11));
+console.log(maximumSecuence(15));
+console.log(maximumSecuence(17));

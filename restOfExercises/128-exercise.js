@@ -9,3 +9,12 @@
 
 */
 
+function findSmallestRoundNumber(givenNumber) {
+  while (givenNumber % 10) {
+    givenNumber++;
+  }
+  return givenNumber;
+}
+
+console.log(findSmallestRoundNumber(56));
+console.log(findSmallestRoundNumber(592));

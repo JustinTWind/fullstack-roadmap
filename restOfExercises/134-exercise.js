@@ -10,7 +10,7 @@
 // prueba.codePointAt() - 96) % 26
 
 function reverseAlphabeth(givenString) {
-  let stringArray = givenString.toLowerCase().split("");
+  const stringArray = givenString.toLowerCase().split("");
 
   return stringArray
     .map((element) => {

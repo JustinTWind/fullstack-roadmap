@@ -8,19 +8,19 @@
 */
 
 function sortByLength(givenArray) {
-  const arrayByLength = givenArray.map((element, index) => {
-    return [element.length, index]
-  }).sort();
+  const arrayByLength = givenArray
+    .map((element, index) => {
+      return [element.length, index];
+    })
+    .sort();
 
-  const organizedArray = []
+  const organizedArray = [];
 
   for (let index = 0; index < givenArray.length; index++) {
-    organizedArray.push(
-      givenArray[arrayByLength[index][1]]
-    )
+    organizedArray.push(givenArray[arrayByLength[index][1]]);
   }
 
-  return organizedArray
+  return organizedArray;
 }
 
 console.log(sortByLength(["xyz", "acd", "aa", "bb", "zzz", "", "a", "b"]));

@@ -6,3 +6,10 @@
 
 */
 
+function simplifyFilePath(givenPath) {
+  givenPath = givenPath.replace(/\./g, "");
+  givenPath = givenPath.replace(/w/g, "");
+  return givenPath.replace(/\/+/g, "/");
+}
+
+console.log(simplifyFilePath("/home/var/./www/../html//sql/"));

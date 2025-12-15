@@ -10,11 +10,11 @@ function sumOfCubes(givenNumber) {
   let totalSum = 0;
 
   for (let index = 1; index <= givenNumber; index++) {
-    totalSum += index ** 3
+    totalSum += index ** 3;
   }
 
-  return totalSum
+  return totalSum;
 }
 
-console.log(sumOfCubes(3))
-console.log(sumOfCubes(4))
+console.log(sumOfCubes(3));
+console.log(sumOfCubes(4));
