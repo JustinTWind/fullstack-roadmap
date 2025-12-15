@@ -9,7 +9,7 @@
 
 */
 
-function reverseBits(givenNumber) {
+function reverseByte(givenNumber) {
   let arrayNumberOnByte = givenNumber
     .toString(2)
     .padStart(8, 0)
@@ -19,6 +19,6 @@ function reverseBits(givenNumber) {
   return parseInt(arrayNumberOnByte.join(""), 2);
 }
 
-console.log(reverseBits(14));
-console.log(reverseBits(56));
-console.log(reverseBits(234));
+console.log(reverseByte(14));
+console.log(reverseByte(56));
+console.log(reverseByte(234));
