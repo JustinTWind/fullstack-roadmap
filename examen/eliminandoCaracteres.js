@@ -43,3 +43,4 @@ console.log(opositeCharactersOptimized("JavaScript", "Python"));
 console.log(opositeCharactersOptimized("abc", "cba"));
 console.log(opositeCharactersOptimized("hello", "world"));
 console.log(opositeCharactersOptimized("programming", "developer"));
+
