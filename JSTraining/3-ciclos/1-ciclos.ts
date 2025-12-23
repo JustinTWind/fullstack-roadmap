@@ -147,6 +147,16 @@ for (let index = 0; index < saludo.length; index++) {
 
 console.log(saludoParseado);
 
+/*
+
+  1. Declaramos el saludo original
+  2. Declaramos una variable con un string vacío para rellenarla después
+  3. Recorremos el string con el for
+  4. si el caracter en el índice "index" es igual a un espacio en blanco, se concatenará al saludoParseado un "_"
+  5. Si el caracter no era un espacio en blanco, simplemente se concatenará al saludo parseado el caracter regular
+
+*/
+
 // -------------------------------------------------- FINAL DE TU CODIGO --------------------------------------------------
 // ************************************************** EJERCICIO - FIN **************************************************
 
