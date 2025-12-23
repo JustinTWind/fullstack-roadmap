@@ -127,18 +127,23 @@ console.log(frase);
 
 {
   let contador: number = 1;
-  let nuevoString: string = "";
-  const frase: string =
+  const frase: string | string[] =
     "yo se que ustedes pueden con este ejercicio ustedes son unos cracks!";
+  const nuevaFrase: string | string[] = [];
 
-  for (const letter of frase) {
-    if (letter === " ") {
-      nuevoString += contador;
-      contador++;
-    } else {
-      nuevoString += letter;
-    }
-  }
+  frase
+    .split("")
+    .reverse()
+    .forEach((element: string) => {
+      if (element === " ") {
+        nuevaFrase.push(String(contador));
+        contador++;
+      } else {
+        nuevaFrase.push(element);
+      }
+    });
+
+  console.log(nuevaFrase.join(""));
 }
 
 // -------------------------------------------------- FINAL DE TU CODIGO --------------------------------------------------
