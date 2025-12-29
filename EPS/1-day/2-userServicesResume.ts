@@ -45,7 +45,7 @@ const userServicesResume = function (userFullName: string): UserServicesResume {
 };
 
 try {
-  console.log(`🫡 La Información del usuario es la siguiente: `,userServicesResume("andres gomez"))
+  console.log(`\n 🫡 La Información del usuario es la siguiente: `,userServicesResume("andres gomez"))
 } catch (error) {
   console.error(`ERROR: ${error}`)
 }

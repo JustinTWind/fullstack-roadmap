@@ -38,10 +38,10 @@ const hospitalUsers = function (hospitalName: string): string[] {
 };
 
 try {
-  console.log(hospitalUsers("clinica villarreal"))
+  console.log("\n\tUsuarios que Han visitado el hospital: \n")
+  hospitalUsers("clinica villarreal").forEach((patientName) => {
+    console.log(`\t•  ${patientName}`)
+  })
 } catch (error) {
   console.error(`ERROR: ${error}`)
 }
-
-
-

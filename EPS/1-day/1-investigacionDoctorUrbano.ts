@@ -31,9 +31,9 @@ const hospitalsWereDoctorWorked = function (doctorsName: string) {
 };
 
 try {
-  console.log(`\nHospitales donde llegó a trabajar el doctor ${DOCTOR_NAME}: \n`)
+  console.log(`\n\t🏥 Hospitales donde llegó a trabajar el doctor ${DOCTOR_NAME}: \n`)
   hospitalsWereDoctorWorked(DOCTOR_NAME).forEach((hospitalName) => {
-    console.log(`•  ${hospitalName}`)
+    console.log(`\t•  ${hospitalName}`)
   })
 } catch (error) {
   console.error(`ERROR: ${error}`);

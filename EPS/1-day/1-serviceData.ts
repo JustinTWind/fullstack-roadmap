@@ -27,7 +27,7 @@ const serviceData = function (serviceid: string): MedicalRecord {
 }
 
 try {
-  console.log(`Información del servicio indicado:`,serviceData("srv_0002"))
+  console.log(`\n 💊 Información del servicio indicado:\n`,serviceData("srv_0002"))
 } catch (error) {
   console.error(`ERROR: ${error}`)
 }

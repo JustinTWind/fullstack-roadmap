@@ -44,7 +44,7 @@ const userPreferredHospital = function (userFullName: string) {
 };
 
 try {
-  console.log('El hospital más visitado por el usuario es:',userPreferredHospital("andres gomez"))
+  console.log('\n\tEl hospital más visitado por el usuario es:',userPreferredHospital("andres gomez"))
 } catch (error) {
   console.error(`ERROR: ${error}`)
 }
