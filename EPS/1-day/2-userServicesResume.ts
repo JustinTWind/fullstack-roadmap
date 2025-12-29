@@ -14,7 +14,7 @@ import { type MedicalRecord } from "../types/entities-schema.ts";
 
 import clinicalRecordDataJson from '../medical_history.json' with { type: 'json' };
 
-import { getUserIdByFullName } from "../utils/helpers.ts";
+import { getUserByFullName } from "../utils/helpers.ts";
 
 interface UserServicesResume {
   userId: string;
@@ -27,7 +27,7 @@ interface UserServicesResume {
 const typedClinicalRecordData: MedicalRecord[] = clinicalRecordDataJson as MedicalRecord[];
 
 const userServicesResume = function (userFullName: string): UserServicesResume {
-  const foundUser = getUserIdByFullName(userFullName)
+  const foundUser = getUserByFullName(userFullName)
 
   const totalMedicalAppointments: number = typedClinicalRecordData.reduce((totalAppointments, currentService) => {
     if (foundUser.userId === currentService.userId) {

@@ -2,7 +2,7 @@ import usersData from '../user-database.json' with { type: 'json' };
 
 import { type User } from '../types/entities-schema.ts';
 
-export const getUserIdByFullName = function (userFullName: string) {
+export const getUserByFullName = function (userFullName: string) {
   userFullName = normalizeString(userFullName)
   const userID = usersData.find((user: User) => {
     return (`${normalizeString(user.firstName)} ${normalizeString(user.lastName)}` === userFullName)

@@ -8,7 +8,7 @@
 
 import clinicalRecordDataJson from '../medical_history.json' with { type: 'json' };
 
-import { getUserIdByFullName } from "../utils/helpers.ts";
+import { getUserByFullName } from "../utils/helpers.ts";
 
 import type { MedicalRecord } from "../types/entities-schema.ts";
 
@@ -20,13 +20,13 @@ interface visitedHospitals {
 }
 
 const userPreferredHospital = function (userFullName: string) {
-  const userId: string = getUserIdByFullName(userFullName).userId;
+  const userId: string = getUserByFullName(userFullName).userId;
 
   const hospitalFrequency: visitedHospitals = {}
     
   typedClinicalRecordData.forEach((service) => {
     if (service.userId === userId) {
-      hospitalFrequency[service.hospitalName] === undefined
+      hospitalFrequency[service.hospitalName]
         ? hospitalFrequency[service.hospitalName] = 1
         : hospitalFrequency[service.hospitalName]! += 1
     }
@@ -36,9 +36,9 @@ const userPreferredHospital = function (userFullName: string) {
     throw new Error("El usuario nunca ha visitado alguno de los hospitales registrados");
   }
 
-  const mostVisitedHospital = Object.entries(hospitalFrequency).reduce(
+  const [mostVisitedHospital] = Object.entries(hospitalFrequency).reduce(
     (mostVisitedHospital, currentHospital) => (mostVisitedHospital[1] > currentHospital[1] ? mostVisitedHospital : currentHospital)
-  )[0];
+  );
 
   return mostVisitedHospital;
 };
