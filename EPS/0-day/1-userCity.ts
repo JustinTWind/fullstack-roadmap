@@ -10,7 +10,6 @@ import usersData from '../user-database.json' with { type: 'json' };
 
 import { type User, type SearchCriteria } from '../types/entities-schema.ts';
 
-
 const userCity = function (criteria: SearchCriteria): string {
   return (usersData.find((user: User) => {
     const userFullName: string = `${user.firstName} ${user.lastName}`

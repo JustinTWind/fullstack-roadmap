@@ -9,6 +9,7 @@
 */
 
 import usersData from '../user-database.json' with { type: 'json' };
+
 import clinicalRecordDataJson from '../medical_history.json' with { type: 'json' };
 
 import { type User, type MedicalRecord, type SearchCriteria, type QueryResponse} from '../types/entities-schema.ts';
@@ -85,3 +86,4 @@ const userLastAppointment = function (criteria: SearchCriteria): QueryResponse {
 
 console.log(userLastAppointment({fullName:"Andrés Gómez"}))
 console.log(userLastAppointment({id:"usr_001"}))
+console.log(userLastAppointment({id:"usr_124"}))

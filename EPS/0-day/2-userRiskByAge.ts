@@ -10,6 +10,7 @@ import usersData from '../user-database.json' with { type: 'json' };
 
 import { type User } from '../types/entities-schema.ts';
 
+
 const RISK = {
   LOW: "bajo",
   MEDIUM: "medio",
