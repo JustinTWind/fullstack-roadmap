@@ -27,8 +27,8 @@ const userPreferredHospital = function (userFullName: string) {
   typedClinicalRecordData.forEach((service) => {
     if (service.userId === userId) {
       hospitalFrequency[service.hospitalName]
-        ? hospitalFrequency[service.hospitalName] = 1
-        : hospitalFrequency[service.hospitalName]! += 1
+        ? hospitalFrequency[service.hospitalName]! += 1
+        : hospitalFrequency[service.hospitalName] = 1
     }
   })
 
