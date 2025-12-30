@@ -27,6 +27,18 @@ export const getUserFullNameById = function (userId: string) {
   return `${foundUser.firstName} ${foundUser.lastName}`
 }
 
+export const getUserById = function (userId: string) {
+ const foundUser = usersData.find((user: User) => {
+     return (user.userId === userId) 
+   })
+  
+  if (!foundUser) {
+    throw new Error("El usuario no fue encontrado");
+  }
+
+  return foundUser
+}
+
 export const normalizeString = function (input: string): string {
   const sinTildes = input.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
   const trimeadoYMinusculas = sinTildes.trim().toLowerCase();

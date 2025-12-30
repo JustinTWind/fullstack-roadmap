@@ -7,7 +7,6 @@
 */
 
 import { type MedicalRecord } from "../types/entities-schema.ts";
-
 import clinicalRecordDataJson from '../medical_history.json' with { type: 'json' };
 
 const typedClinicalRecordData: MedicalRecord[] = clinicalRecordDataJson as MedicalRecord[];

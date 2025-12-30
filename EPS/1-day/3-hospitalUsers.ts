@@ -10,9 +10,7 @@
 */
 
 import clinicalRecordDataJson from '../medical_history.json' with { type: 'json' };
-
 import type { MedicalRecord } from '../types/entities-schema.ts';
-
 import { getUserFullNameById, normalizeString } from '../utils/helpers.ts';
 
 const typedClinicalRecordData: MedicalRecord[] = clinicalRecordDataJson as MedicalRecord[];

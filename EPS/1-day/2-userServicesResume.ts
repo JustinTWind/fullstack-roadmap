@@ -11,9 +11,7 @@
 */
 
 import { type MedicalRecord } from "../types/entities-schema.ts";
-
 import clinicalRecordDataJson from '../medical_history.json' with { type: 'json' };
-
 import { getUserByFullName } from "../utils/helpers.ts";
 
 interface UserServicesResume {
@@ -49,5 +47,3 @@ try {
 } catch (error) {
   console.error(`ERROR: ${error}`)
 }
-
-

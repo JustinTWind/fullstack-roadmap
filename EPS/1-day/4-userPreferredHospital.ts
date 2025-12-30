@@ -7,22 +7,16 @@
 */
 
 import clinicalRecordDataJson from '../medical_history.json' with { type: 'json' };
-
 import { getUserByFullName } from "../utils/helpers.ts";
-
-import type { MedicalRecord } from "../types/entities-schema.ts";
+import type { MedicalRecord, VisitedHospitals } from "../types/entities-schema.ts";
 
 const typedClinicalRecordData: MedicalRecord[] =
   clinicalRecordDataJson as MedicalRecord[];
 
-interface visitedHospitals {
-  [key: string]: number;
-}
-
 const userPreferredHospital = function (userFullName: string) {
   const userId: string = getUserByFullName(userFullName).userId;
 
-  const hospitalFrequency: visitedHospitals = {}
+  const hospitalFrequency: VisitedHospitals = {}
     
   typedClinicalRecordData.forEach((service) => {
     if (service.userId === userId) {
@@ -48,4 +42,3 @@ try {
 } catch (error) {
   console.error(`ERROR: ${error}`)
 }
-

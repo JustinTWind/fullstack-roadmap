@@ -23,6 +23,10 @@ export interface SearchCriteria {
   fullName?: string;
 }
 
+export interface VisitedHospitals {
+  [key: string]: number;
+}
+
 export interface QueryResponse {
   userId: string;
   fullName: string;
