@@ -28,7 +28,7 @@ interface MedicationResume {
 const medicationUsedTracker = function (
   userId: string,
   medicationName: string
-) {
+):MedicationResume {
   userId = userId.toLowerCase().trim();
   medicationName = normalizeString(medicationName)
 
@@ -55,7 +55,7 @@ const medicationUsedTracker = function (
   })
 
   if (!medicationExistsFlag) {
-    throw new Error("El usuario nunca se le ha sido recetado dicho medicamento, o el medicamento no existe");
+    throw new Error("Al usuario nunca se le ha sido recetado dicho medicamento, o el medicamento no existe");
   }
 
   return medicationResume
