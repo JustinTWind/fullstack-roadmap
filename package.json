@@ -1,0 +1,8 @@
+{
+  "name": "training-with-sebastian",
+  "version": "1.0.0",
+  "type": "module",
+  "devDependencies": {
+    "typescript": "^5.9.3"
+  }
+}
