@@ -37,3 +37,8 @@ export interface QueryResponse {
   medicationsUsed: string[];
   date: string;
 }
+
+export interface ContactResume {
+  userName: string;
+  userEmail: string;
+}
