@@ -1,0 +1,17 @@
+[
+  {
+    "id": "a2e27c3c-b1e6-4a96-b3ab-383ba6d69307",
+    "nombre": "Daniel",
+    "apellido": "Vanegas",
+    "ciudad": 19,
+    "correo": "danimoreno@gmail.com"
+  },
+  {
+    "id": "fd6007e6-79bf-4e58-8099-e6a9db71daf9",
+    "nombre": "Mariana",
+    "apellido": "Marin",
+    "ciudad": "Medellín",
+    "edad": 24,
+    "correo": "marianamarin@gmail.com"
+  }
+]
